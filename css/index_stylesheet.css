@@ -10,12 +10,18 @@
 
 /*--------------- Style für Landingpage --------------*/
 
+body {
+    background-color: var(--text-dark);
+}
+
 .background {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: url(../img/HustleAtHomeBG.jpg), lightgray 50% / cover no-repeat;
+    background: url(../img/HustleAtHomeBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
     height: 100vh;
 }
