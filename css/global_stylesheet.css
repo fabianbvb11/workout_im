@@ -78,7 +78,7 @@ h1 {
 h2 {
     color: var(--text-dark);
     /* Übertitel Pages */
-    font-family: Lemon;
+    font-family: 'Lemon';
     font-size: 36px;
     font-style: normal;
     font-weight: 400;
@@ -89,7 +89,7 @@ h2 {
 h3 {
     color: var(--Black, #000);
     text-align: center;
-    font-family: Lemon;
+    font-family: 'Lemon';
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
@@ -98,7 +98,7 @@ h3 {
 
 h4 {
     /* Untertitel Kleine Buttons */
-    font-family: Oswald;
+    font-family: 'Oswald';
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -108,11 +108,21 @@ h4 {
 h5 {
     color: var(--text-dark);
     text-align: center;
-    font-family: Lemon;
+    font-family: 'Lemon';
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.textklein {
+    color: var(--Black, #000);
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 157.143% */
 }
 
 a {
