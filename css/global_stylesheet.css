@@ -171,11 +171,12 @@ h6 {
 h7 {
     color: var(--text-dark);
     text-align: center;
-font-family: Oswald;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 22px;
+    font-family: Oswald;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    
 }
 
 .textklein {
@@ -191,6 +192,39 @@ line-height: 22px;
 a {
     text-decoration: none;
 }
+
+.profileinstellungen {
+    display: flex;
+    width: 100%;
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+
+
+.grün {
+    background-color: var(--Green)
+}
+
+.rot {
+    background-color: var(--Red);
+}
+
+h6.rot {
+    color: var(--White);
+}
+
+.schwarz {
+    background-color: var(--Black);
+}
+
+h6.schwarz {
+    color: var(--Green);
+}
+
 
 
 /*-------------- Global typography END -----------------*/
