@@ -1,0 +1,6 @@
+<svg width="100" height="102" viewBox="0 0 100 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="NewIcon">
+<path id="Plus" d="M76 16.5H76.5V16V0.5H83.5V16V16.5H84H99.5V23.5H84H83.5V24V39.5H76.5V24V23.5H76H60.5V16.5H76Z" stroke="black"/>
+<path id="Bogen" d="M92.5 94V52.5H99.5V95C99.5 98.5899 96.5899 101.5 93 101.5H7C3.41015 101.5 0.5 98.5899 0.5 95V9C0.5 5.41015 3.41015 2.5 7 2.5H49.5V9.5H8H7.5V10V94V94.5H8H92H92.5V94Z" stroke="black"/>
+</g>
+</svg>

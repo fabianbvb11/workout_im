@@ -1,0 +1,52 @@
+:root {
+    --White: #FDFDFD;
+    --Green: #00FFC2;
+    --Black: #000;
+    --text-dark: #121212;
+    --Red: #C75353;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.LoginButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--Green);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.RegistrierenButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--Black);
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 18px;
+}
+
+h4 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.RegistrierenButton h5 {
+    color: var(--Green);
+}
