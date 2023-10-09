@@ -23,9 +23,9 @@
                 <label for="name"><h4>Name</h4></label>
                 <input type="text" name="name" id="name">
                 <label for="email"><h4>E-Mail</h4></label>
-                <input type="text" name="email" id="email">
+                <input type="text" name="email" id="emailInput">
                 <label for="passwort"><h4>Passwort</h4></label>
-                <input type="password" name="password" id="passwort">
+                <input type="password" name="password" id="passwortInput">
                 <div class="agb">   
                     <input type="checkbox" name="agb" id="agree">
                     <label for="agree"><p>ich akzeptiere die AGB.</p></label>
@@ -33,13 +33,14 @@
             </form>
             <div class="Buttons">
                 <a href="registersuccess.html">
-                    <div class="RegistrierenButton">
+                    <div class="RegistrierenButton" id="signupButton">
                         <h5>Registrieren</h5>
                     </div>
                 </a>
                 <p class="textklein">Already have an Account? <a class="link" href="login.html">Login</a></p>
             </div>
         </div>
-      
+        <script type="module" src="js/supabase_config.js""></script>
+        <script type="module" src="js/2_password.js"></script>
     </body>
 </html>
