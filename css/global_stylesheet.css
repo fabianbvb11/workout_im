@@ -33,6 +33,12 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
+header {
+    display: flex;
+    justify-content: space-between; /* Elemente auf die rechte und linke Seite verteilen */
+    align-items: center; /* Elemente vertikal zentrieren */
+    padding: 10px; /* Kleiner Abstand zum Rand */
+}
 ol, ul {
     list-style: none;
 }
