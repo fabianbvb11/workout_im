@@ -145,6 +145,16 @@ h5 {
     line-height: normal;
 }
 
+h6 {
+    color: var(--text-dark);
+    text-align: center;
+    font-family: Oswald;
+    font-size: 39px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 .textklein {
     color: var(--Black, #000);
     text-align: center;
@@ -158,5 +168,7 @@ h5 {
 a {
     text-decoration: none;
 }
+
+
 /*-------------- Global typography END -----------------*/
 
