@@ -33,6 +33,12 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
+header {
+    display: flex;
+    justify-content: space-between; /* Elemente auf die rechte und linke Seite verteilen */
+    align-items: center; /* Elemente vertikal zentrieren */
+    padding: 10px; /* Kleiner Abstand zum Rand */
+}
 ol, ul {
     list-style: none;
 }
@@ -165,12 +171,11 @@ h6 {
 h7 {
     color: var(--text-dark);
     text-align: center;
-    font-family: Oswald;
-    font-family: Oswald;
+font-family: Oswald;
 font-size: 20px;
 font-style: normal;
-font-weight: 500;
-line-height: normal;
+font-weight: 400;
+line-height: 22px;
 }
 
 .textklein {
