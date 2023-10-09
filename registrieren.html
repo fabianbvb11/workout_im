@@ -11,6 +11,8 @@
         <link rel="global_stylesheet" href="https://fonts.googleapis.com">
         <link rel="global_stylesheet" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@500&display=swap" rel="global_stylesheet">
+        <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -25,15 +27,15 @@
                 <label for="email"><h4>E-Mail</h4></label>
                 <input type="text" name="email" id="emailInput">
                 <label for="passwort"><h4>Passwort</h4></label>
-                <input type="password" name="password" id="passwortInput">
+                <input type="password" name="password" id="passwordInput">
                 <div class="agb">   
                     <input type="checkbox" name="agb" id="agree">
                     <label for="agree"><p>ich akzeptiere die AGB.</p></label>
                 </div>
             </form>
             <div class="Buttons">
-                <a href="registersuccess.html">
-                    <div class="RegistrierenButton" id="signupButton">
+                <a id="signupButton">
+                    <div class="RegistrierenButton">
                         <h5>Registrieren</h5>
                     </div>
                 </a>
@@ -41,6 +43,6 @@
             </div>
         </div>
         <script type="module" src="js/supabase_config.js""></script>
-        <script type="module" src="js/2_password.js"></script>
+        <script type="module" src="js/2_password_register.js"></script>
     </body>
 </html>
