@@ -21,22 +21,30 @@
                 <h2>Accountlogin</h2>
             </div>
             <div>
-                <form action="">
+                <div>
                     <label for="email"><h4>E-Mail</h4></label>
-                    <input type="text" name="email" id="emailInput">
+                    <input type="text" name="email" id="emailInput" required>
                     <label for="passwort"><h4>Passwort</h4></label>
-                    <input type="password" name="password" id="passwordInput">
-                </form>
+                    <input type="password" name="password" id="passwordInput" required>
+
+                    <button id="loginButton">Login</button>
+                </div>
+
+                <div class="textklein" id="fehlermeldung"></div>
+                
                 <div class="passwortVergessen">   
                     <p class="textklein">Du hast dein Passwort vergessen? <a class="link" href="passwordforgotten.html">Zurücksetzen</a></p>
                 </div>
             </div>
+
+
+            
             <div class="Buttons">
-                <a href="#" id="loginButton">
+                <!-- <a href="#" id="loginButton">
                     <div class="LoginButton">
                         <h5>Login</h5>
                     </div>
-                </a>
+                </a> -->
                 <p class="textklein">Du hast keinen Account? <a class="link" href="registrieren.html">Registrieren</a></p>
             </div>
         </div>
