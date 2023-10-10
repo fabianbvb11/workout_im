@@ -4,8 +4,8 @@ import { supa } from "../js/supabase_config.js";
 async function signUp() {
     const email = document.getElementById('emailInput').value;
     const password = document.getElementById('passwordInput').value;
-    const firstname = document.getElementById('firstname');
-    const lastname = document.getElementById('name');
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('name').value;
 
     console.log(email + " " + firstname + " " + lastname);
 
