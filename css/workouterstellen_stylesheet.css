@@ -1,0 +1,128 @@
+:root {
+    --White: #FDFDFD;
+    --Green: #00FFC2;
+    --Black: #000;
+    --text-dark: #121212;
+    --Red: #C75353;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 150vh;
+}
+
+input[type='text'], input[type='submit'], select {
+    width: 350px;
+    height: 45px;
+    border-radius: 5px;
+    border: 2px solid var(--Green, #00FFC2);
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.equipment {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+
+
+.agb, .passwortVergessen {
+    display: flex;
+    font-family: 'Montserrat';
+    margin-top: 10px;
+    text-justify: inherit;
+}
+
+.link {
+
+color: var(--Green, #00FFC2);
+font-family: Montserrat;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 22px;
+text-decoration-line: underline;
+}
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: inherit;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 129px;
+    height: 121px;
+    background-color: var(--Green, #00FFC2);
+    border-radius: 10px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  
+  
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: var(--Black, #000);
+  }
+
+  .container input:checked ~ .checkmark p {
+    color: var(--Green);
+  }
+
+
+
+   .container input:checked ~ .checkmark .normal #Vector {
+    fill: var(--Green, #00FFC2);   
+}
+
+.container input:checked ~ .checkmark .spezial #Vector {
+    stroke: var(--Green, #00FFC2);
+}
+
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
