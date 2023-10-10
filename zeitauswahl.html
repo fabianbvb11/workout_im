@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hustle at Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/global_stylesheet.css">
+    <link rel="stylesheet" href="../css/zeitauswahl_stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@500&display=swap"
+        rel="global_stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Logo mit Link zur Startseite -->
+        <a href="startscreen.html">
+            <img src="../img/Hustleathome.svg" alt="HustleLogo">
+        </a>
+
+        <!-- SVG-Icon mit Link zu den persönlichen Einstellungen -->
+        <a href="">
+            <img src="../img/Vector.svg" alt="Profil">
+        </a>
+    </header>
+    <div class="container">
+        <div class="StartscreenText">
+            <h2>Wie lange <br> möchtest du <br> trainieren? </h2>
+        </div>
+        
+        <div class="time-picker">
+            <div class="scrollable-time">
+                <ul>
+                    <!-- Generate time options from 5 to 60 minutes -->
+                    <li data-minutes="5">5 Minutes</li>
+                    <li data-minutes="10">10 Minutes</li>
+                    <li data-minutes="15">15 Minutes</li>
+                    <li data-minutes="20">20 Minutes</li>
+                    <li data-minutes="25">25 Minutes</li>
+                    <li data-minutes="30">30 Minutes</li>
+                    <li data-minutes="35">35 Minutes</li>
+                    <li data-minutes="40">40 Minutes</li>
+                    <li data-minutes="45">45 Minutes</li>
+                    <li data-minutes="50">50 Minutes</li>
+                    <li data-minutes="55">55 Minutes</li>
+                    <li data-minutes="60">60 Minutes</li>
+                </ul>
+            </div>
+        </div>
+        <div class="selected-time">
+            <p>Selected Time: <span id="selectedTime">5 Minutes</span></p>
+        </div>
+        <a href="">
+            <div class="weiterButton">
+                <h5>Weiter</h5>
+            </div>
+        </a>
+
+    </div>
+
+    <script src="js/zeitauswahl.js"></script>
+
+</body>
+
+</html>
