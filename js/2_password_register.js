@@ -4,8 +4,21 @@ import { supa } from "../js/supabase_config.js";
 async function signUp() {
     const email = document.getElementById('emailInput').value;
     const password = document.getElementById('passwordInput').value;
+    const firstname = document.getElementById('firstname');
+    const lastname = document.getElementById('name');
 
-    const { error } = await supa.auth.signUp({ email, password });
+    console.log(email + " " + firstname + " " + lastname);
+
+    const { error } = await supa.auth.signUp(
+        {
+            email,
+            password,
+            options: {
+                data: {
+                  first_name: firstname,
+                  last_name: lastname,
+                }
+              }});
 
     if (error) {
         console.error("Error during sign up: ", error.message);
