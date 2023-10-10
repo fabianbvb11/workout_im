@@ -6,13 +6,16 @@
     --Red: #C75353;
 }
 
+h2 {
+    text-align: center;
+}
 
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
 }
 
 input {
@@ -24,8 +27,13 @@ input {
 }
 
 
-.profileinstellungen{
-    margin-bottom: 10%;
+.profileinstellungen {
+    display: flex;
+    width: 350px;
+    height: 40px;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
 }
 
 h6 {

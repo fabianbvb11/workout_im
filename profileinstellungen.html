@@ -15,10 +15,24 @@
         rel="global_stylesheet">
 </head>
 
+
+
 <body>
+    <header>
+        <!-- Logo mit Link zur Startseite -->
+        <a href="startscreen.html">
+            <img src="../img/Hustleathome.svg" alt="HustleLogo">
+        </a>
+
+        <!-- SVG-Icon mit Link zu den persönlichen Einstellungen -->
+        <a href="#" onclick="goBack()">
+            <img src="../img/Cross.svg" alt="Back">
+        </a>
+    </header>
+
     <div class="container">
         <div class="WelcomeText">
-            <h2>Profileinstellungen</h2>
+            <h2>Profil- <br> einstellungen</h2>
         </div>
         <form action="">
             <label for="firstname"><h4>Vorname</h4></label>
@@ -28,21 +42,31 @@
         </form>
         <a href="meineworkouts.html">
             <div class="profileinstellungen grün">
-                <h6>Meine Workouts</h6>
+                <h5>Meine Workouts</h5>
             </div>
         </a>
         <a href="absolvierteworkouts.html">
             <div class="profileinstellungen grün">
-                <h6>Absolvierte Workouts</h6>
+                <h5>Absolvierte Workouts</h5>
             </div>
         </a>
         <a href="accountlöschen.html">
             <div class="profileinstellungen rot">
-                <h6 class="rot">Account löschen</h6>
+                <h5 class="rot">Account löschen</h5>
+            </div>
+        </a>
+        <a href="welcome.html">
+            <div class="profileinstellungen grün">
+                <h5>Logout</h5>
             </div>
         </a>
     </div>
-    </div>
+
+    <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
 
 </body>
 
