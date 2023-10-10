@@ -12,11 +12,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.container_profileinstellungen {
-    width: 30%;
+input {
+    width: 350px;
+    height: 45px;
+    border-radius: 5px;
+    border: 2px solid var(--Green, #00FFC2);
+    margin-bottom: 10px;
 }
+
 
 .profileinstellungen{
     margin-bottom: 10%;
