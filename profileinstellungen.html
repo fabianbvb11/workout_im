@@ -34,39 +34,58 @@
         <div class="WelcomeText">
             <h2>Profil- <br> einstellungen</h2>
         </div>
-        <form action="">
-            <label for="firstname"><h4>Vorname</h4></label>
-            <input type="text" name="firstname" id="firstname">
-            <label for="name"><h4>Name</h4></label>
-            <input type="text" name="name" id="name">
-        </form>
-        <a href="meineworkouts.html">
-            <div class="profileinstellungen grün">
-                <h5>Meine Workouts</h5>
+        <div class="bildwechsel">
+            <div class="Profilbild">
+                <img src="../img/Greand.svg" alt="">
+                <p class="textklein">Bild hinzufügen</p>
             </div>
-        </a>
-        <a href="absolvierteworkouts.html">
-            <div class="profileinstellungen grün">
-                <h5>Absolvierte Workouts</h5>
-            </div>
-        </a>
-        <a href="accountlöschen.html">
-            <div class="profileinstellungen rot">
-                <h5 class="rot">Account löschen</h5>
-            </div>
-        </a>
-        <a href="welcome.html">
-            <div class="profileinstellungen grün">
-                <h5>Logout</h5>
-            </div>
-        </a>
+        </div>
+        <div class="profilname">
+            <form action="">
+                <label for="firstname">
+                    <h4>Vorname</h4>
+                </label>
+                <input type="text" name="firstname" id="firstname">
+                <label for="name">
+                    <h4>Name</h4>
+                </label>
+                <input type="text" name="name" id="name">
+            </form>
+            <a href="">
+                <div class="speichernButton schwarz">
+                    <h5>Übernehmen</h5>
+                </div>
+            </a>
+        </div>
+        <div class="weitereButtons">
+            <a href="meineworkouts.html">
+                <div class="profileinstellungen grün">
+                    <h5>Meine Workouts</h5>
+                </div>
+            </a>
+            <a href="absolvierteworkouts.html">
+                <div class="profileinstellungen grün">
+                    <h5>Absolvierte Workouts</h5>
+                </div>
+            </a>
+            <a href="accountlöschen.html">
+                <div class="profileinstellungen rot">
+                    <h5 class="rot">Account löschen</h5>
+                </div>
+            </a>
+            <a href="welcome.html">
+                <div class="profileinstellungen grün">
+                    <h5>Logout</h5>
+                </div>
+            </a>
+        </div>
     </div>
 
     <script>
         function goBack() {
-          window.history.back();
+            window.history.back();
         }
-      </script>
+    </script>
 
 </body>
 
