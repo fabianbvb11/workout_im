@@ -11,14 +11,14 @@ async function signUp() {
 
     const { error } = await supa.auth.signUp(
         {
-            email,
-            password,
-            options: {
-                data: {
-                  first_name: firstname,
-                  last_name: lastname,
+            "email" : email,
+            "password": password
+        },{
+            "data": {
+                  "first_name": firstname,
+                  "last_name": lastname
                 }
-              }});
+              });
 
     if (error) {
         console.error("Error during sign up: ", error.message);
