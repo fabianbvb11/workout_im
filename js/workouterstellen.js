@@ -23,18 +23,37 @@ async function insertWorkout() {
     const workoutBeschreibung = document.querySelector('#description');
     const workoutMuskelgruppe = document.querySelector('#muskelgruppe');
     const workoutDauer = document.querySelector('#zeit');
-    // const workoutEquipment = {
-    //     bett: document.getElementById("bettbutton").checked,
-    //     stuhl: document.getElementById("stuhlbutton").checked,
-    //     hantel: document.getElementById("hantelbutton").checked,
-    //     tisch: document.getElementById("tischbutton").checked,
-    //   };
-
+  
     const workoutEquipmentbett = document.getElementById("bettbutton").checked;
     const workoutEquipmentstuhl = document.getElementById("stuhlbutton").checked;
     const workoutEquipmenthantel = document.getElementById("hantelbutton").checked;
     const workoutEquipmenttisch = document.getElementById("tischbutton").checked;
-    
+
+    if (
+      !url.value ||
+      !workoutTitel.value ||
+      !workoutBeschreibung.value ||
+      !workoutMuskelgruppe.value ||
+      !workoutDauer.value
+    ) {
+      ausgabefeld.textContent = 'Bitte fülle alle Felder aus!';
+  
+      setTimeout(() => {
+        ausgabefeld.textContent = '';
+      }, 3000);
+      return;
+    }
+
+    if (!url.value.includes('youtube.com')) {
+      ausgabefeld.textContent = 'Die URL muss ein Youtubelink sein!';
+      
+
+      setTimeout(() => {
+        ausgabefeld.textContent = '';
+      }, 3000);
+      return;
+    }
+   
     console.log(url.value);
     console.log(workoutTitel.value);
     console.log(workoutBeschreibung.value);
@@ -64,13 +83,13 @@ async function insertWorkout() {
       
 
     if (error) {
-      workoutupload.textContent = 'Fehler beim Speichern der Änderungen: ' + error.message;
+      ausgabefeld.textContent = 'Fehler beim Speichern der Änderungen: ' + error.message;
   } else {
-      workoutupload.textContent = 'Änderungen erfolgreich gespeichert.';
+    ausgabefeld.textContent = 'Änderungen erfolgreich gespeichert!';
   }
 
   setTimeout(() => {
-    workoutupload.textContent = ''; // Leer den Textinhalt, um das Element auszublenden
+    ausgabefeld.textContent = '';
 }, 3000);
       
 }
