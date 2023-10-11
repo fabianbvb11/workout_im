@@ -15,10 +15,10 @@ async function insertWorkout() {
     const workoutMuskelgruppe = document.querySelector('#muskelgruppe');
     const workoutDauer = document.querySelector('#zeit');
     const workoutEquipment = {
-        checkbox1: document.getElementById("bettbutton").checked,
-        checkbox2: document.getElementById("stuhlbutton").checked,
-        checkbox3: document.getElementById("hantelbutton").checked,
-        checkbox4: document.getElementById("tischbutton").checked,
+        bett: document.getElementById("bettbutton").checked,
+        stuhl: document.getElementById("stuhlbutton").checked,
+        hantel: document.getElementById("hantelbutton").checked,
+        tisch: document.getElementById("tischbutton").checked,
       };
     console.log(url.value);
     console.log(workoutTitel.value);
