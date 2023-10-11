@@ -8,7 +8,7 @@ async function displayUserName() {
 
         const { data, error } = await supa
             .from('userdata')
-            .select('vorname', 'nachname')
+            .select('vorname, nachname')
             .eq('id', id)
             .single();
 
@@ -20,8 +20,6 @@ async function displayUserName() {
             
             const vorname = `${data.vorname}`;
             const nachname = `${data.nachname}`;
-
-            console.log(vorname + nachname)
 
 
             document.getElementById('firstnameprofil').value = vorname;
@@ -56,9 +54,13 @@ async function saveChanges() {
             .eq('id', id);
 
         if (error) {
-            console.log('Fehler beim Speichern der Änderungen:', error);
-        } else {
-            console.log('Änderungen erfolgreich gespeichert.');
+            nameoutput.textContent = 'Fehler beim Speichern der Änderungen: ' + error.message;
+        }  else {
+            nameoutput.textContent = 'Änderungen erfolgreich gespeichert.';
         }
+
+        setTimeout(() => {
+            nameoutput.textContent = ''; // Leer den Textinhalt, um das Element auszublenden
+        }, 30000);
     }
 }
