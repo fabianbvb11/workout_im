@@ -7,15 +7,17 @@ async function signUp() {
     const firstname = document.getElementById('firstname').value;
     const lastname = document.getElementById('name').value;
 
-     // Überprüfen, ob alle Felder ausgefüllt sind
      if (!email || !password || !firstname || !lastname) {
-        console.error("Bitte füllen Sie alle Felder aus.");
+        ausgabefeld.textContent = 'Bitte fülle alle Felder aus!';
+        setTimeout(function() {
+        ausgabefeld.textContent = '';
+    }, 3000);
         return;
     }
 
     // Überprüfen, ob die E-Mail-Adresse gültig ist
     if (!isValidEmail(email)) {
-        console.error("Die eingegebene E-Mail-Adresse ist ungültig.");
+        ausgabefeld.textContent = 'Die eingegebene E-Mail-Adresse ist ungültig!';
         return;
     }
 
@@ -33,7 +35,7 @@ async function signUp() {
               });
 
     if (error) {
-        console.error("Error during sign up: ", error.message);
+        ausgabefeld.textContent = 'Fehler beim einloggen:' + error.message;
     } else {
         console.log("Signed up as ", email);
         window.location.href = "registersuccess.html";
@@ -44,21 +46,6 @@ function isValidEmail(email) {
     const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
     return emailRegex.test(email);
 }
-
-// Function to update user status
-// function updateUserStatus(user) {
-//     const userStatusElement = document.getElementById('userStatus');
-
-//     if (user) {
-//         userStatusElement.textContent = `Authenticated as: ${user.email}`;
-//     } else {
-//         userStatusElement.textContent = "Not authenticated.";
-//     }
-// }
-
-// Check and display the initial user status
-// const initialUser = supa.auth.user();
-// updateUserStatus(initialUser);
 
 // Event listeners for the buttons
 // document.getElementById('loginButton').addEventListener('click', login);

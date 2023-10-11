@@ -29,6 +29,8 @@ h2 {
     height: 75vh;
 }
 
+
+
 .untertitel {
     text-align: center;
 }
@@ -117,4 +119,18 @@ h6 {
     cursor: pointer;
 }
 
+.container_meineworkouts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 120vh;
+}
 
+
+div.ansicht_workout {
+    background-color: var(--Green);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
