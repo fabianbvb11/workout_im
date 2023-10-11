@@ -64,9 +64,13 @@ async function insertWorkout() {
       
 
     if (error) {
-        workoutUploadElement.innerHTML = 'Fehler beim Speichern der Änderungen: ' + error.message;
-    }   else {
-        workoutUploadElement.innerHTML = 'Änderungen erfolgreich gespeichert.';
-    }
+      workoutupload.textContent = 'Fehler beim Speichern der Änderungen: ' + error.message;
+  } else {
+      workoutupload.textContent = 'Änderungen erfolgreich gespeichert.';
+  }
+
+  setTimeout(() => {
+    workoutupload.textContent = ''; // Leer den Textinhalt, um das Element auszublenden
+}, 3000);
       
 }
