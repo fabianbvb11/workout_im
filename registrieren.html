@@ -19,22 +19,27 @@
             <div class="WelcomeText">
                 <h2>Neuen Accout <br> erstellen</h2>
             </div>
-            <form action="">
+            <div>
                 <label for="firstname"><h4>Vorname</h4></label>
-                <input type="text" name="firstname" id="firstname">
+                <input type="text" name="firstname" id="firstname" required>
                 <label for="name"><h4>Name</h4></label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" required>
                 <label for="email"><h4>E-Mail</h4></label>
-                <input type="text" name="email" id="emailInput">
+                <input type="text" name="email" id="emailInput" required>
                 <label for="passwort"><h4>Passwort</h4></label>
-                <input type="password" name="password" id="passwordInput">
+                <input type="password" name="password" id="passwordInput" required>
                 <div class="agb">   
                     <input type="checkbox" name="agb" id="agree" required>
                     <label for="agree"><p>ich akzeptiere die AGB.</p></label>
                 </div>
-                <input type="submit" id=signupbutton value="Registrieren">
                 
-            </form>
+                <!-- <input type="submit" id=signupButton value="Registrieren"> -->
+                <button id="signupButton">Registrieren</button>
+                
+            </div>
+
+            <div class="textklein" id="fehlermeldung"></div>
+
             <div class="Buttons">
                 <!-- <a id="signupButton">
                     <div class="RegistrierenButton">
