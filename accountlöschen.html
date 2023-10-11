@@ -11,31 +11,38 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@500&display=swap" rel="global_stylesheet">
+    
+    
+        <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
+
     </head>
     <body>
-        <div class="container">
+        <div class="container_deleteaccount">
             <div class="WelcomeText">
                 <h2>Account löschen</h2>
             </div>
 
             <div>
-               <h7>Möchtest du deinen Account wirklich löschen? Deine Workouts gehen ebenfalls verloren.</h7>
+               <h4 class="untertitel">Möchtest du deinen Account wirklich löschen? <br>Deine Workouts gehen ebenfalls verloren.</h4>
             </div>
 
-            <div class="container_profileinstellungen">
-                <a href="deleteaccountlöschen.html">
-                    <div class="profileinstellungen rot">
-                        <h6 class="rot">Ja</h6>
-                    </div>
-                </a>
-                <a href="profileinstellungen.html">
-                    <div class="profileinstellungen schwarz">
-                        <h6 class="schwarz">Abbrechen</h6>
-                    </div>
-                </a>
-            </div>
+            <a>
+                <div class="profileinstellungengross rotgross" id="deleteaccount">
+                    <h6 class="rotgross">Ja</h6>
+                </div>
+            </a>
+            
+            <a href="profileinstellungen.html">
+                <div class="profileinstellungengross schwarzgross">
+                    <h6 class="schwarzgross">Abbrechen</h6>
+                </div>
+            </a>
             
         </div>
+
+        <script type="module" src="/js/supabase_config.js"></script>
+        <script type="module" src="/js/delete_account.js"></script>
       
     </body>
 </html>

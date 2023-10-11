@@ -7,6 +7,18 @@ async function signUp() {
     const firstname = document.getElementById('firstname').value;
     const lastname = document.getElementById('name').value;
 
+     // Überprüfen, ob alle Felder ausgefüllt sind
+     if (!email || !password || !firstname || !lastname) {
+        console.error("Bitte füllen Sie alle Felder aus.");
+        return;
+    }
+
+    // Überprüfen, ob die E-Mail-Adresse gültig ist
+    if (!isValidEmail(email)) {
+        console.error("Die eingegebene E-Mail-Adresse ist ungültig.");
+        return;
+    }
+
     console.log(email + " " + firstname + " " + lastname);
 
     const { error } = await supa.auth.signUp(
@@ -26,6 +38,11 @@ async function signUp() {
         console.log("Signed up as ", email);
         window.location.href = "registersuccess.html";
     }
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    return emailRegex.test(email);
 }
 
 // Function to update user status
