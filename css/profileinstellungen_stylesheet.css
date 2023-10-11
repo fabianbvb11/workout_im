@@ -18,7 +18,7 @@ h2 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 95vh;
+    height: 102vh;
 }
 
 input {
@@ -72,4 +72,8 @@ input {
 
 h6 {
     padding: 0% 3%;
+}
+
+#ausgabefeld {
+    margin-top: 5%;
 }
