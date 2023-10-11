@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hustle at Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/global_stylesheet.css">
+    <link rel="stylesheet" href="../css/equipment_stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@500&display=swap"
+        rel="global_stylesheet">
+
+    <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="startscreen.html">
+            <img src="../img/Hustleathome.svg" alt="HustleLogo">
+        </a>
+
+
+        <div>
+            <h7 class="displayname" id="userDisplayName"></h7>
+
+            <a href="profileinstellungen.html">
+                <img src="../img/Vector.svg" alt="Profil">
+
+            </a>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="StartscreenText">
+            <h2>Wähle dein <br> verfügbares <br> Equipment</h2>
+        </div>
+        <div class="equipment">
+            <label for="bettbutton" class="container">
+                <input type="checkbox" id="bettbutton" value="Bett">
+                <span class="checkmark">
+                    <svg class="normal" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="icon-park-outline:dumbbell">
+                        <path id="Vector" d="M14.6875 9H38.3125C39.8881 8.99992 41.4045 9.60096 42.5522 10.6805C43.6999 11.7601 44.3925 13.2368 44.4888 14.8095L44.5 15.1875V22.734C45.7264 23.0822 46.8155 23.8004 47.6185 24.7906C48.4215 25.7809 48.8992 26.9948 48.9865 28.2668L49 28.6875V45.5625C48.9999 45.9901 48.8374 46.4016 48.5456 46.714C48.2537 47.0264 47.8541 47.2164 47.4275 47.2456C47.001 47.2747 46.5792 47.1408 46.2476 46.871C45.9159 46.6012 45.699 46.2156 45.6408 45.792L45.625 45.5625V40.5H7.375V45.5625C7.37498 45.9703 7.2273 46.3643 6.95927 46.6716C6.69124 46.9789 6.321 47.1788 5.917 47.2342L5.6875 47.25C5.27972 47.25 4.88573 47.1023 4.57841 46.8343C4.27108 46.5662 4.07121 46.196 4.01575 45.792L4 45.5625V28.6875C4 25.8547 5.9035 23.4675 8.5 22.7317V15.1875C8.49992 13.6119 9.10096 12.0955 10.1805 10.9478C11.2601 9.80013 12.7368 9.10751 14.3095 9.01125L14.6875 9ZM42.8125 25.875H10.1875C9.49122 25.8747 8.81957 26.1327 8.30253 26.599C7.78548 27.0653 7.4598 27.7069 7.3885 28.3995L7.375 28.6875V37.125H45.625V28.6875C45.6248 27.9916 45.3665 27.3205 44.9003 26.8039C44.434 26.2874 43.7927 25.962 43.1005 25.8908L42.8125 25.875ZM38.3125 12.375H14.6875C13.9912 12.3747 13.3196 12.6327 12.8025 13.099C12.2855 13.5653 11.9598 14.2069 11.8885 14.8995L11.875 15.1875V22.5H15.25C15.25 21.9033 15.4871 21.331 15.909 20.909C16.331 20.4871 16.9033 20.25 17.5 20.25H22C22.5511 20.2501 23.083 20.4524 23.4948 20.8186C23.9067 21.1848 24.1698 21.6894 24.2342 22.2368L24.25 22.5H28.75C28.75 21.9033 28.9871 21.331 29.409 20.909C29.831 20.4871 30.4033 20.25 31 20.25H35.5C36.0511 20.2501 36.583 20.4524 36.9948 20.8186C37.4067 21.1848 37.6698 21.6894 37.7342 22.2368L37.75 22.5H41.125V15.1875C41.1253 14.4912 40.8673 13.8196 40.401 13.3025C39.9347 12.7855 39.2931 12.4598 38.6005 12.3885L38.3125 12.375Z" fill="black"/>
+                        </g>
+                    </svg>
+                    <p class="buttonText">Bett</p>
+                </span>
+            </label>
+            <label for="stuhlbutton" class="container">
+                <input type="checkbox" id="stuhlbutton" value="Stuhl">
+                <span class="checkmark">
+                    <svg class="normal" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="icon-park-outline:dumbbell">
+                        <path id="Vector" d="M16.4042 9.375C15.4997 10.941 15.4997 13.0425 15.4997 17.25V24.0608C16.4672 24 17.5562 24 18.7285 24H34.771C35.941 24 37.0322 24 37.9997 24.0608V17.25C37.9997 13.0425 37.9997 10.941 37.0952 9.375C36.5028 8.34896 35.6508 7.49691 34.6247 6.9045C33.0587 6 30.9572 6 26.7497 6C22.5422 6 20.4407 6 18.8747 6.9045C17.8487 7.49691 16.9966 8.34896 16.4042 9.375ZM13.8122 35.2297C12.6827 35.1847 11.9987 35.0317 11.5307 34.521C10.8625 33.792 10.9502 32.7795 11.1257 30.7523C11.2495 29.2898 11.533 28.3043 12.1765 27.5685C13.3285 26.25 15.1802 26.25 18.886 26.25H34.6135C38.3192 26.25 40.171 26.25 41.323 27.5685C41.9665 28.302 42.25 29.2875 42.376 30.7523C42.5492 32.7773 42.637 33.792 41.9687 34.521C41.5007 35.0317 40.8167 35.1847 39.6872 35.2297V46.5C39.6872 46.9476 39.5094 47.3768 39.193 47.6932C38.8765 48.0097 38.4473 48.1875 37.9997 48.1875C37.5522 48.1875 37.1229 48.0097 36.8065 47.6932C36.49 47.3768 36.3122 46.9476 36.3122 46.5V35.25H17.1872V46.5C17.1872 46.9476 17.0094 47.3768 16.693 47.6932C16.3765 48.0097 15.9473 48.1875 15.4997 48.1875C15.0522 48.1875 14.6229 48.0097 14.3065 47.6932C13.99 47.3768 13.8122 46.9476 13.8122 46.5V35.2275V35.2297Z" fill="black"/>
+                        </g>
+                    </svg>
+                    <p class="buttonText">Stuhl</p>
+                </span>
+            </label>
+            <label for="hantelbutton" class="container">
+                <input type="checkbox" id="hantelbutton" value="Hantel">
+                <span class="checkmark">
+                    <svg class="spezial" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="icon-park-outline:dumbbell">
+                        <path id="Vector" d="M15.75 15.3C15.75 13.6845 14.2391 12.375 12.375 12.375C10.5109 12.375 9 13.6845 9 15.3V38.7C9 40.3155 10.5109 41.625 12.375 41.625C14.2391 41.625 15.75 40.3155 15.75 38.7V15.3ZM45 15.3C45 13.6845 43.4891 12.375 41.625 12.375C39.7609 12.375 38.25 13.6845 38.25 15.3V38.7C38.25 40.3155 39.7609 41.625 41.625 41.625C43.4891 41.625 45 40.3155 45 38.7V15.3ZM9 21.0004C9 19.3432 7.48912 18 5.625 18C3.76088 18 2.25 19.3432 2.25 21.0004V32.9996C2.25 34.6568 3.76088 36 5.625 36C7.48912 36 9 34.6568 9 32.9996V21.0004ZM51.75 21.0004C51.75 19.3432 50.2391 18 48.375 18C46.5109 18 45 19.3432 45 21.0004V32.9996C45 34.6568 46.5109 36 48.375 36C50.2391 36 51.75 34.6568 51.75 32.9996V21.0004ZM15.75 30.375H38.25V23.625H15.75V30.375Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                    <p class="buttonText">Hantel</p>
+                </span>
+            </label>
+            <label for="tischbutton" class="container">
+                <input type="checkbox" id="tischbutton" value="Tisch">
+                <span class="checkmark">
+                    <svg class="normal" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="icon-park-outline:dumbbell">
+                        <path id="Vector" d="M13 44L16.375 35.5625C16.7125 34.7 17.2563 34.0152 18.0063 33.5082C18.7563 33.0012 19.6 32.7485 20.5375 32.75H24.25V23.6938C18.5125 23.5063 13.7028 22.6625 9.82075 21.1625C5.93875 19.6625 3.9985 17.9 4 15.875C4 13.7 6.19375 11.8438 10.5813 10.3063C14.9688 8.76875 20.275 8 26.5 8C32.7625 8 38.0785 8.76875 42.448 10.3063C46.8175 11.8438 49.0015 13.7 49 15.875C49 17.9 47.059 19.6625 43.177 21.1625C39.295 22.6625 34.486 23.5063 28.75 23.6938V32.75H32.4625C33.3625 32.75 34.1972 33.0035 34.9667 33.5105C35.7362 34.0175 36.289 34.7015 36.625 35.5625L40 44H35.5L32.8 37.25H20.2L17.5 44H13Z" fill="black"/>
+                        </g>
+                    </svg>
+                    <p class="buttonText">Tisch</p>
+                </span>
+            </label>
+            
+        </div>
+        <button id="uploadButton">weiter</button>
+        </div>
+
+        <div id="ausgabefeld"></div>
+
+
+</div>
+    </div>
+    </div>
+
+    <script type="module" src="../js/supabase_config.js"></script>
+    <script type="module" src="../js/2_password_startscreen.js"></script>
+
+
+</body>
+
+</html>

@@ -54,13 +54,13 @@ async function saveChanges() {
             .eq('id', id);
 
         if (error) {
-            nameoutput.textContent = 'Fehler beim Speichern der Änderungen: ' + error.message;
+            ausgabefeld.textContent = 'Fehler beim Speichern der Änderungen: ' + error.message;
         }  else {
-            nameoutput.textContent = 'Änderungen erfolgreich gespeichert.';
+            ausgabefeld.textContent = 'Änderungen erfolgreich gespeichert.';
         }
 
         setTimeout(() => {
-            nameoutput.textContent = ''; // Leer den Textinhalt, um das Element auszublenden
+            ausgabefeld.textContent = '';
         }, 3000);
     }
 }
