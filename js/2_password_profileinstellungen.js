@@ -61,6 +61,6 @@ async function saveChanges() {
 
         setTimeout(() => {
             nameoutput.textContent = ''; // Leer den Textinhalt, um das Element auszublenden
-        }, 30000);
+        }, 3000);
     }
 }
