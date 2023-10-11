@@ -52,7 +52,19 @@ ul {
     margin: 0;
 }
 
-li {
+.selected-time {
+    background-color: #00FFC2;
+    color: #000000;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
     color: var(--text-dark);
     text-align: center;
     font-family: Oswald;
@@ -62,16 +74,7 @@ li {
     line-height: normal;
 }
 
-li:hover {
-    color: #f0f0f0;
+button:selection {
+    background-color: var(--White);
 }
-
-.selected-time {
-    background-color: #00FFC2;
-    color: #000000;
-    border-radius: 5px;
-    padding: 10px;
-    display: none;
-}
-
 
