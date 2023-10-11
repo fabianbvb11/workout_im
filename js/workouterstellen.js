@@ -4,8 +4,8 @@ console.log("Supabase initialisiert")
 
 // Funktion zum Einfügen eines neuen Workouts
 const hochladen  = document.querySelector('#uploadButton');
-hochladen.addEventListener('click', insertWorkout);
-console.log("Eventlistener hochladen aktiviert")
+hochladen.addEventListener('click', insertWorkout, console.log("Eventlistener hochladen aktiviert"));
+// console.log("Eventlistener hochladen aktiviert")
 
 async function insertWorkout() {
     console.log("insertWorkout() ausgeführt")
@@ -15,11 +15,17 @@ async function insertWorkout() {
     const workoutMuskelgruppe = document.querySelector('#muskelgruppe');
     const workoutDauer = document.querySelector('#zeit');
     const workoutEquipment = {
-        checkbox1: document.getElementById('#bettbutton').checked,
-        checkbox2: document.getElementById('#stuhlbutton').checked,
-        checkbox3: document.getElementById('#hantelbutton').checked,
-        checkbox4: document.getElementById('#tischbutton').checked,
+        checkbox1: document.getElementById("bettbutton").checked,
+        checkbox2: document.getElementById("stuhlbutton").checked,
+        checkbox3: document.getElementById("hantelbutton").checked,
+        checkbox4: document.getElementById("tischbutton").checked,
       };
+    console.log(url.value);
+    console.log(workoutTitel.value);
+    console.log(workoutBeschreibung.value);
+    console.log(workoutMuskelgruppe.value);
+    console.log(workoutDauer.value);
+    console.log(workoutEquipment);
 
     const { data, error } = await supa.from("workoutdata").insert([
       {
