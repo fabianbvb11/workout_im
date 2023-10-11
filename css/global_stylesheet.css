@@ -196,7 +196,7 @@ a {
 .profileinstellungen {
     display: flex;
     width: 278px;
-height: 78px;
+    height: 78px;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -228,4 +228,21 @@ h6.schwarz {
 
 
 /*-------------- Global typography END -----------------*/
+/*-------------- Button Style -----------------*/
+
+button {
+    width: 350px;
+    height: 40px;
+    background-color: var(--Green);
+    border-radius: 10px;
+    border: none;
+    color: var(--Black, #000);
+    text-align: center;
+    font-family: Lemon;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 

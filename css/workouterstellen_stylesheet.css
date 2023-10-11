@@ -125,4 +125,8 @@ text-decoration-line: underline;
   .container input:checked ~ .checkmark:after {
     display: block;
   }
+
+  button {
+    margin-top: 30px;
+  }
   

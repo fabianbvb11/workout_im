@@ -18,6 +18,17 @@
 </head>
 
 <body>
+    <header>
+        <!-- Logo mit Link zur Startseite -->
+        <a href="startscreen.html">
+            <img src="../img/Hustleathome.svg" alt="HustleLogo">
+        </a>
+
+        <!-- SVG-Icon mit Link zu den persönlichen Einstellungen -->
+        <a href="#" onclick="goBack()">
+            <img src="../img/Cross.svg" alt="Back">
+        </a>
+    </header>
     <div class="wrapper">
         <div class="WelcomeText">
             <h2>Workout <br> erstellen</h2>
@@ -108,11 +119,16 @@
                 </label>
                 
             </div>
-            <input type="submit" id=signupbutton value="Hochladen">
+            <button id="uploadButton">Hochladen</button>
         </form>
     </div>
     <script type="module" src="js/supabase_config.js""></script>
-        <script type=" module" src=""></script>
+    <script type=" module" src=""></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 
 </html>
