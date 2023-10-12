@@ -41,7 +41,7 @@ async function getSignedUrl(filePath) {
         return;
     }
 
-    
+
     const { data, error } = await supa.storage.from('profilbilder').createSignedUrl(filePath, 300);
     if (error) {
         console.error('Fehler beim Laden des Bildes:', error);
@@ -51,7 +51,14 @@ async function getSignedUrl(filePath) {
 }
 
 async function fetchAndDisplayPhotos() {
-    const { data, error } = await supa.from("userimage").select("url");
+    const user = supa.auth.user();
+    if (!user) {
+        console.error('Benutzer ist nicht eingeloggt.');
+        return;
+    }
+
+
+    const { data, error } = await supa.from("userimage").select("url").eq("id", user.id);
     if (error) {
         console.error("Error fetching photos:", error);
         return;

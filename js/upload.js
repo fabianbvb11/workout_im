@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 async function uploadPhoto() {
-    // Stellen Sie sicher, dass der Benutzer eingeloggt ist, bevor Sie fortfahren.
     const user = supa.auth.user();
     if (!user) {
         console.error('Benutzer ist nicht eingeloggt.');
@@ -82,7 +81,7 @@ async function getSignedUrl(filePath) {
         return;
     }
 
-    
+
     const { data, error } = await supa.storage.from('profilbilder').createSignedUrl(filePath, 300);
     if (error) {
         console.error('Fehler beim Laden des Bildes:', error);
@@ -91,26 +90,32 @@ async function getSignedUrl(filePath) {
     return data.signedURL;
 }
 
-async function fetchAndDisplayPhotos() {
-    const { data, error } = await supa.from("userimage").select("url");
-    if (error) {
-        console.error("Error fetching photos:", error);
+async function fetchAndDisplayUserPhoto() {
+    const user = supa.auth.user();
+    if (!user) {
+        console.error('Benutzer ist nicht eingeloggt.');
         return;
     }
+
+    const { data, error } = await supa.from("userimage").select("url").eq("id", user.id);
+    if (error) {
+        console.error("Error fetching user's photo:", error);
+        return;
+    }
+
     const photosContainer = document.getElementById('profilbild_anzeige');
-    for (const photo of data) {
-        const signedUrl = await getSignedUrl(photo.url);
+    
+    if (data.length > 0) {
+        const userPhoto = data[0];
+        const signedUrl = await getSignedUrl(userPhoto.url);
         if (signedUrl) {
             const imgElement = document.createElement('img');
             imgElement.src = signedUrl;
             imgElement.alt = "Uploaded photo";
             imgElement.width = 200;
             photosContainer.appendChild(imgElement);
-            const captionElement = document.createElement('p');
-            captionElement.textContent = photo.caption;
-            photosContainer.appendChild(captionElement);
         }
     }
 }
 
-fetchAndDisplayPhotos();
+fetchAndDisplayUserPhoto();
