@@ -76,6 +76,13 @@ async function uploadPhoto() {
 
 // Profilbild anzeigen
 async function getSignedUrl(filePath) {
+    const user = supa.auth.user();
+    if (!user) {
+        console.error('Benutzer ist nicht eingeloggt.');
+        return;
+    }
+
+    
     const { data, error } = await supa.storage.from('profilbilder').createSignedUrl(filePath, 300);
     if (error) {
         console.error('Fehler beim Laden des Bildes:', error);
