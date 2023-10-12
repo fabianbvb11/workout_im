@@ -45,4 +45,20 @@ h2 {
 .buttonText {
     margin-right: 10px;
 }
+
+
+#profilbild_anzeige {
+    width: 50px; /* Setzen Sie die gewünschte Breite */
+    height: 50px; /* Setzen Sie die gewünschte Höhe */
+    border: 1px solid #ccc; /* Optional: Rahmen hinzufügen */
+    overflow: hidden; /* Bilder, die das Container-Element überschreiten, werden beschnitten */
+    border-radius: 50%;
+}
+
+#profilbild_anzeige img {
+    width: 100%; /* Bilder auf die volle Breite des Containers skalieren */
+    height: 100%; /* Bilder auf die volle Höhe des Containers skalieren */
+    object-fit:cover; /* Bilder so zuschneiden, dass sie in das Container-Seitenverhältnis passen */
+}
+
  

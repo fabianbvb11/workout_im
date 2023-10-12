@@ -134,3 +134,17 @@ div.ansicht_workout {
     border-radius: 10px;
     margin: 10px;
 }
+
+#profilbild_anzeige {
+    width: 300px; /* Setzen Sie die gewünschte Breite */
+    height: 300px; /* Setzen Sie die gewünschte Höhe */
+    border: 1px solid #ccc; /* Optional: Rahmen hinzufügen */
+    overflow: hidden; /* Bilder, die das Container-Element überschreiten, werden beschnitten */
+}
+
+#profilbild_anzeige img {
+    width: 100%; /* Bilder auf die volle Breite des Containers skalieren */
+    height: 100%; /* Bilder auf die volle Höhe des Containers skalieren */
+    object-fit:cover; /* Bilder so zuschneiden, dass sie in das Container-Seitenverhältnis passen */
+}
+
