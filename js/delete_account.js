@@ -41,13 +41,14 @@ async function deleteUserData() {
       console.log('Daten aus "userdata" erfolgreich gelöscht.');
     }
 
-    const { errorAuth } = await supa.auth.deleteUser(id);
-
+    // Delete user from authentication
+    const { errorAuth } = await supa.auth.deleteUser();
     if (errorAuth) {
       console.error('Fehler beim Löschen des Benutzers aus der Authentifizierung:', errorAuth);
     } else {
-      console.log('Benutzer aus der Authentifizierung erfolgreich gelöscht.');
+      console.log('Benutzer erfolgreich aus der Authentifizierung gelöscht.');
     }
+    
   }
 }
 
