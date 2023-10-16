@@ -26,12 +26,12 @@ async function selectAllWorkouts() {
     const { data, error } = await supa
     .from("workoutdata")
     .select()
-    .eq('zeit', workoutDauer)
+    .lte('zeit', workoutDauer)
     .eq('muskelgruppe', workoutMuskelgruppe)
     .eq('bett', workoutEquipmentbett)
     .eq('stuhl', workoutEquipmentstuhl)
     .eq('hantel', workoutEquipmenthantel)
-    .eq('tisch', workoutEquipmenttisch);
+    .eq('tisch', workoutEquipmenttisch)
     
     return data;
   }
