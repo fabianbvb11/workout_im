@@ -58,3 +58,6 @@ function handleTouchEnd() {
 document.addEventListener('touchstart', handleTouchStart);
 document.addEventListener('touchmove', handleTouchMove);
 document.addEventListener('touchend', handleTouchEnd);
+
+console.log(localStorage);
+

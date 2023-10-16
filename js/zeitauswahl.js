@@ -1,6 +1,7 @@
 const timeOptions = document.querySelectorAll(".scrollable-time ul li");
 const selectedTimeElement = document.getElementById("selectedTime");
 const buttons = document.querySelectorAll('.button-list button');
+const values = document.querySelectorAll('button.value');
 
 let selectedTime = 5; // Initial selected time in minutes
 
@@ -22,14 +23,20 @@ buttons.forEach(button => {
         activeButton = button;
         // Change the color of the clicked button to white
         button.style.color = 'white';
+
+        // Save the selected time to local storage when a button is clicked
+        localStorage.setItem('selectedTime', activeButton.getAttribute('value'));
     });
 });
 
 // Add click event listeners to time options
 timeOptions.forEach((option) => {
     option.addEventListener("click", () => {
-        selectedTime = parseInt(option.getAttribute("data-minutes"));
+        selectedTime = parseInt(activeButton.getAttribute('value'));
         updateSelectedTime();
+        
+        // Log the selected time to the console
+        console.log(selectedTime);
     });
 });
 
