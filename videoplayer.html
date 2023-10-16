@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="resultat"></h1>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const workoutID = urlParams.get('id');
+
+        const result = document.getElementById("resultat");
+
+        result.innerHTML = workoutID;
+
+    </script>
+</body>
+</html>

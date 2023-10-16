@@ -10,9 +10,9 @@ async function getMyWorkouts() {
     }
 
     const { data, error } = await supa
-    .from('workoutdata')
-    .select('titel, beschreibung, muskelgruppe, zeit, bett, stuhl, hantel, tisch, video')
-    .eq('user_id', user.id);
+        .from('workoutdata')
+        .select('titel, beschreibung, muskelgruppe, zeit, bett, stuhl, hantel, tisch, video')
+        .eq('user_id', user.id);
 
 
     if (error) {
@@ -25,33 +25,33 @@ async function getMyWorkouts() {
 
             // ...
 
-data.forEach(workout => {
-    const workoutItem = document.createElement('div');
-    workoutItem.classList.add('ansicht_workout');
-    
-    let equipmentText = 'Ausstattung: ';
+            data.forEach(workout => {
+                const workoutItem = document.createElement('div');
+                workoutItem.classList.add('ansicht_workout');
 
-    if (workout.bett === true) {
-        equipmentText += 'Bett, ';
-    }
+                let equipmentText = 'Ausstattung: ';
 
-    if (workout.stuhl === true) {
-        equipmentText += 'Stuhl, ';
-    }
+                if (workout.bett === true) {
+                    equipmentText += 'Bett, ';
+                }
 
-    if (workout.hantel === true) {
-        equipmentText += 'Hantel, ';
-    }
+                if (workout.stuhl === true) {
+                    equipmentText += 'Stuhl, ';
+                }
 
-    if (workout.tisch === true) {
-        equipmentText += 'Tisch, ';
-    }
+                if (workout.hantel === true) {
+                    equipmentText += 'Hantel, ';
+                }
 
-    equipmentText = equipmentText.slice(0, -2);
+                if (workout.tisch === true) {
+                    equipmentText += 'Tisch, ';
+                }
 
-    const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.video)}`;
+                equipmentText = equipmentText.slice(0, -2);
 
-    workoutItem.innerHTML = `
+                const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.video)}`;
+
+                workoutItem.innerHTML = `
         <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
         <h2>${workout.titel}</h2>
         <h5>Beschreibung: ${workout.beschreibung}</h5>
@@ -60,18 +60,18 @@ data.forEach(workout => {
         <h5>${equipmentText}</h5>
         
     `;
-    workoutList.appendChild(workoutItem);
-});
+                workoutList.appendChild(workoutItem);
+            });
 
-// Funktion, um die Video-ID aus einer YouTube-Video-URL zu extrahieren
-function getVideoIDFromURL(url) {
-    const videoID = url.split('v=')[1];
-    const ampersandPosition = videoID.indexOf('&');
-    if (ampersandPosition !== -1) {
-        return videoID.substring(0, ampersandPosition);
-    }
-    return videoID;
-}
+            // Funktion, um die Video-ID aus einer YouTube-Video-URL zu extrahieren
+            function getVideoIDFromURL(url) {
+                const videoID = url.split('v=')[1];
+                const ampersandPosition = videoID.indexOf('&');
+                if (ampersandPosition !== -1) {
+                    return videoID.substring(0, ampersandPosition);
+                }
+                return videoID;
+            }
 
         } else {
             workoutList.textContent = 'Keine Workouts gefunden.';
