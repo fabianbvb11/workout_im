@@ -37,3 +37,4 @@ async function selectAllWorkouts() {
   }
 
 console.log('Alle Workouts mit gleicher Zeit: ', selectAllWorkouts());a
+
