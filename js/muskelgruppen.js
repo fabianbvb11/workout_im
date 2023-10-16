@@ -9,6 +9,9 @@ function updateCarousel() {
         dots[index].classList.remove('active');
     });
     dots[currentIndex].classList.add('active');
+    
+    // Save the ID of the active "dot" to local storage
+    localStorage.setItem('activeDotID', dots[currentIndex].id);
 }
 
 function nextSlide() {
@@ -59,5 +62,16 @@ document.addEventListener('touchstart', handleTouchStart);
 document.addEventListener('touchmove', handleTouchMove);
 document.addEventListener('touchend', handleTouchEnd);
 
-console.log(localStorage);
+// Load the active "dot" ID from local storage
+const activeDotID = localStorage.getItem('activeDotID');
+if (activeDotID) {
+    // Find the index of the active "dot" and set the currentIndex
+    const activeDotIndex = Array.from(dots).findIndex(dot => dot.id === activeDotID);
+    if (activeDotIndex !== -1) {
+        currentIndex = activeDotIndex;
+        updateCarousel();
+    }
+}
 
+console.log(localStorage.getItem('activeDotID'));
+console.log(localStorage.getItem('selectedTime'));

@@ -34,9 +34,9 @@ timeOptions.forEach((option) => {
     option.addEventListener("click", () => {
         selectedTime = parseInt(activeButton.getAttribute('value'));
         updateSelectedTime();
-        
+
         // Log the selected time to the console
-        console.log(selectedTime);
+        console.log(localStorage.getItem('selectedTime'));
     });
 });
 
