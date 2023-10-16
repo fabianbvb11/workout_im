@@ -5,7 +5,7 @@ console.log("Supabase initialisiert")
 // Funktion zum Einfügen eines neuen Workouts
 const hochladen  = document.querySelector('#uploadButton');
 hochladen.addEventListener('click', insertWorkout);
-// console.log("Eventlistener hochladen aktiviert")
+
 
 async function insertWorkout() {
   const user = supa.auth.user();
