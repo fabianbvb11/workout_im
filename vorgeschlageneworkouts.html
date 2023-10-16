@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hustle at Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/global_stylesheet.css">
+    <link rel="stylesheet" href="../css/startscreen_stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@500&display=swap"
+        rel="global_stylesheet">
+
+        <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="startscreen.html">
+            <img src="../img/Hustleathome.svg" alt="HustleLogo">
+        </a>
+        
+        
+        <div class="userProfile">
+            <div class="buttonText displayname" id="userDisplayName"></div>
+            <a href="profileinstellungen.html">
+                <!-- <img src="../img/Vector.svg" alt="Profil"> -->
+                <div id="profilbild_anzeige" alt="Profilbild"></div>
+            </a>
+        </div>
+        
+    </header>  
+    <div class="container">
+        <div class="StartscreenText">
+            <h2>Verfügbare <br> Workouts</h2>
+        </div>
+        <a href="#">
+            <div class="Button1">
+                <img src="../img/Play_Icon.svg" alt="Workout">
+                <div class="WorkoutButton">
+                    <h6>Workout 1</h6>
+                </div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="Button2">
+                <img src="../img/Play_Icon.svg" alt="Workout">
+                <div class="CreateNewButton">
+                    <h6>Workout 2</h6>
+                </div>
+            </div>
+        </a>
+    </div>
+    </div>
+
+    <script type="module" src="../js/supabase_config.js"></script>
+    <script type="module" src="../js/vorgeschlageneWorkouts.js"></script>
+
+
+</body>
+
+</html>
