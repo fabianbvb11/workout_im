@@ -54,11 +54,10 @@ async function saveChanges() {
             .eq('id', id);
 
         if (error) {
-            ausgabefeld.textContent = 'Fehler beim Speichern der Änderungen: ' + error.message;
+            ausgabefeld.innerHTML = 'Fehler beim Speichern der Änderungen: ' + error.message;
         }  else {
-            ausgabefeld.textContent = 'Änderungen erfolgreich gespeichert.';
+            ausgabefeld.innerHTML = 'Änderungen erfolgreich gespeichert.';
         }
-
         setTimeout(() => {
             ausgabefeld.textContent = '';
         }, 3000);

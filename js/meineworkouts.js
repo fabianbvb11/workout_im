@@ -5,7 +5,7 @@ async function getMyWorkouts() {
     const user = supa.auth.user();
 
     if (!user) {
-        console.log('User is not authenticated.');
+        ausgabefeld.textContent = 'Benutzer ist nicht eingeloggt:' + error.message;
         return;
     }
 
@@ -16,12 +16,12 @@ async function getMyWorkouts() {
 
 
     if (error) {
-        workoutList.textContent = 'Fehler beim Abrufen der Workouts:' + error.message;
+        ausgabefeld.textContent = 'Fehler beim Abrufen der Workouts:' + error.message;
     } else {
         if (data.length > 0) {
-            const workoutList = document.getElementById('workoutList');
+            const ausgabefeld = document.getElementById('ausgabefeld');
 
-            workoutList.innerHTML = '';
+            ausgabefeld.innerHTML = '';
 
             // ...
 
@@ -60,7 +60,7 @@ async function getMyWorkouts() {
         <h5>${equipmentText}</h5>
         
     `;
-                workoutList.appendChild(workoutItem);
+    ausgabefeld.appendChild(workoutItem);
             });
 
             // Funktion, um die Video-ID aus einer YouTube-Video-URL zu extrahieren
@@ -74,7 +74,7 @@ async function getMyWorkouts() {
             }
 
         } else {
-            workoutList.textContent = 'Keine Workouts gefunden.';
+            ausgabefeld.textContent = 'Keine Workouts gefunden.';
         }
     }
 }

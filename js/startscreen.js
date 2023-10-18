@@ -63,20 +63,21 @@ async function fetchAndDisplayPhotos() {
         console.error("Error fetching photos:", error);
         return;
     }
-    const photosContainer = document.getElementById('profilbild_anzeige');
-    for (const photo of data) {
-        const signedUrl = await getSignedUrl(photo.url);
-        if (signedUrl) {
-            const imgElement = document.createElement('img');
-            imgElement.src = signedUrl;
-            imgElement.alt = "Uploaded photo";
-            imgElement.width = 200;
-            photosContainer.appendChild(imgElement);
-            const captionElement = document.createElement('p');
-            captionElement.textContent = photo.caption;
-            photosContainer.appendChild(captionElement);
-        }
+    const photosContainer = document.getElementById('photosContainer');
+for (const photo of data) {
+    const signedUrl = await getSignedUrl(photo.url);
+    if (signedUrl) {
+        const imgElement = document.createElement('img');
+        imgElement.src = signedUrl;
+        imgElement.alt = "Uploaded photo";
+        imgElement.width = 200;
+        photosContainer.appendChild(imgElement);
+        const captionElement = document.createElement('p');
+        captionElement.textContent = photo.caption;
+        photosContainer.appendChild(captionElement);
     }
+}
+
 }
 
 fetchAndDisplayPhotos();

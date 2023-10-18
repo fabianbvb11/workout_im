@@ -10,7 +10,7 @@ async function changePassword() {
     // Überprüfe, ob die beiden Passwörter übereinstimmen
 
     if (newPassword !== newPasswordRepeat) {
-        alert("Die eingegebenen Passwörter stimmen nicht überein.");
+        ausgabefeld.innerHTML = "Die eingegebenen Passwörter stimmen nicht überein.";
         return;
     }
 
@@ -19,18 +19,22 @@ async function changePassword() {
         const { error } = await supa.auth.update({ password: newPassword });
 
         if (error) {
-            alert("Fehler beim Ändern des Passworts: " + error.message);
+            ausgabefeld.innerHTML = "Fehler beim Ändern des Passworts: " + error.message;
+            setTimeout(() => {
+                ausgabefeld.textContent = '';
+            }, 3000);
         } else {
 
-            // alert("Passwort erfolgreich geändert.");
-            console.log("Passwort erfolgreich geänder. ");
+            ausgabefeld.innerHTML = "Passwort erfolgreich geändert.";
             window.location.href = "/startscreen.html";
         }
 
     } catch (error) {
-
         console.error(error);
-        alert("Fehler beim Ändern des Passworts: " + error.message);
+        ausgabefeld.innerHTML = "Fehler beim Ändern des Passworts: " + error.message;
+        setTimeout(() => {
+            ausgabefeld.textContent = '';
+        }, 3000);
     }
 }
 

@@ -13,20 +13,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@500&display=swap"
         rel="global_stylesheet">
+
+        <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
 </head>
 
 <body>
     <header>
-        <!-- Logo mit Link zur Startseite -->
         <a href="startscreen.html">
             <img src="../img/Hustleathome.svg" alt="HustleLogo">
         </a>
-
-        <!-- SVG-Icon mit Link zu den persönlichen Einstellungen -->
-        <a href="profileinstellungen.html">
-            <img src="../img/Vector.svg" alt="Profil">
-        </a>
-    </header>
+        
+        
+        <div class="userProfile">
+            <div class="buttonText displayname abstand_name" id="userDisplayName"></div>
+            <a href="profileinstellungen.html">
+                <div class="profilbild_anzeige" alt="Profilbild" id="photosContainer"></div>
+            </a>
+        </div>
+        
+    </header> 
     <div class="container">
         <div class="StartscreenText">
             <h2>Welche <br> Muskelgruppe <br> möchtest du <br> trainieren? </h2>
@@ -65,9 +71,17 @@
             </div>
         </a>
 
+        <a href="startscreen.html">
+            <div class="weiterButton">
+                <h5>Zurück</h5>
+            </div>
+        </a>
+
     </div>
 
-    <script src="js/muskelgruppen.js"></script>
+    <script type="module" src="../js/muskelgruppen.js"></script>
+    <script type="module" src="../js/startscreen.js"></script>
+    <script type="module" src="../js/supabase_config.js"></script>
 
 </body>
 

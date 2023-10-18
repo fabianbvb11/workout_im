@@ -23,6 +23,8 @@ async function abfrageEquipment() {
     console.log(localStorage.getItem('stuhl'));
     console.log(localStorage.getItem('hantel'));
     console.log(localStorage.getItem('tisch'));
+
+    window.location.href = "vorgeschlageneworkouts.html";
 }
 
 

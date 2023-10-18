@@ -23,17 +23,16 @@
         <a href="startscreen.html">
             <img src="../img/Hustleathome.svg" alt="HustleLogo">
         </a>
-
-
-        <div>
-            <h7 class="displayname" id="userDisplayName"></h7>
-
+        
+        
+        <div class="userProfile">
+            <div class="buttonText displayname abstand_name" id="userDisplayName"></div>
             <a href="profileinstellungen.html">
-                <img src="../img/Vector.svg" alt="Profil">
-
+                <div class="profilbild_anzeige" alt="Profilbild" id="photosContainer"></div>
             </a>
         </div>
-    </header>
+        
+    </header>  
     <div class="wrapper">
         <div class="StartscreenText">
             <h2>Wähle dein <br> verfügbares <br> Equipment</h2>
@@ -85,13 +84,28 @@
             </label>
             
         </div>
-        <a href="vorgeschlageneworkouts.html">
+        <!-- <a href="vorgeschlageneworkouts.html">
             <button id="equipmentAbfrage">weiter</button>
         </a>
-        </div>
+        </div> -->
+
+
+        
+        <div class="weiterButton" id="equipmentAbfrage">
+                <h5>Weiter</h5>
+            </div>
+    
+
+        <a href="muskelgruppen.html">
+            <div class="weiterButton">
+                <h5>Zurück</h5>
+            </div>
+        </a>
+
+
+        
 
         <div id="ausgabefeld"></div>
-
 
 </div>
     </div>
@@ -99,7 +113,7 @@
 
     <script type="module" src="../js/supabase_config.js"></script>
     <script type="module" src="../js/equipment.js"></script>
-
+    <script type="module" src="../js/startscreen.js"></script>
 
 </body>
 

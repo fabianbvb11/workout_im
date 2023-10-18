@@ -40,5 +40,20 @@ timeOptions.forEach((option) => {
     });
 });
 
+const weiterButton = document.getElementById("weiterButton");
+
+weiterButton.addEventListener("click", () => {
+    const selectedTimeValue = localStorage.getItem('selectedTime');
+    if (selectedTimeValue) {
+        // A time is selected, redirect to "muskelgruppen.html"
+        window.location.href = "muskelgruppen.html";
+    } else {
+        // No time selected, display an error message in "ausgabefeld"
+        const ausgabefeld = document.getElementById("ausgabefeld");
+        ausgabefeld.innerHTML = "Please select a time before proceeding.";
+    }
+});
+
 // Initialize selected time
 updateSelectedTime();
+

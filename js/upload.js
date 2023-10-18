@@ -60,13 +60,19 @@ async function uploadPhoto() {
         ]);
 
         if (error) {
-            console.error('Fehler beim Speichern in der Tabelle "userimage":', error);
+            ausgabefeld2.innerHTML = 'Fehler beim Speichern in der Tabelle "userimage":', error;
         } else {
-            console.log('Erfolgreich hochgeladen und gespeichert:', data);
-            alert('Profilbild erfolgreich hochgeladen!');
+            ausgabefeld2.innerHTML = "Profilbild erfolgreich hochgeladen!";
+           
         }
+        setTimeout(function() {
+            ausgabefeld2.innerHTML = "";
+        }, 3000);
     } else {
-        console.log('Keine Datei ausgewählt.');
+        ausgabefeld2.innerHTML = 'Fehler: Keine Datei ausgewählt!';
+        setTimeout(function() {
+            ausgabefeld2.innerHTML = "";
+        }, 3000);
     }
 }
 

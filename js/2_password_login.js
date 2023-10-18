@@ -15,34 +15,4 @@ async function login() {
     }
 }
 
-// Check and display the initial user status
-// const initialUser = supa.auth.user();
-// updateUserStatus(initialUser);
-
-// Event listeners for the buttons
 document.getElementById('loginButton').addEventListener('click', login);
-// document.getElementById('signupButton').addEventListener('click', signUp);
-
-// Listener for authentication state changes
-// supa.auth.onAuthStateChange((event, session) => {
-//     if (event === "SIGNED_IN") {
-//         console.log("User signed in: ", session.user);
-//         updateUserStatus(session.user);
-//     } else if (event === "SIGNED_OUT") {
-//         console.log("User signed out");
-//         updateUserStatus(null);
-//     }
-// });
-
-// Logout logic
-// async function logout() {
-//     const { error } = await supa.auth.signOut();
-//     if (error) {
-//         console.error("Error during logout:", error);
-//     } else {
-//         updateUserStatus(null);
-//         console.log("User logged out successfully.");
-//     }
-// }
-
-// document.getElementById('logoutButton').addEventListener('click', logout);

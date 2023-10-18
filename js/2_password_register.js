@@ -47,8 +47,6 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Event listeners for the buttons
-// document.getElementById('loginButton').addEventListener('click', login);
 document.getElementById('signupButton').addEventListener('click', signUp);
 
 // Listener for authentication state changes
@@ -61,16 +59,3 @@ supa.auth.onAuthStateChange((event, session) => {
         updateUserStatus(null);
     }
 });
-
-// Logout logic
-async function logout() {
-    const { error } = await supa.auth.signOut();
-    if (error) {
-        console.error("Error during logout:", error);
-    } else {
-        updateUserStatus(null);
-        console.log("User logged out successfully.");
-    }
-}
-
-// document.getElementById('logoutButton').addEventListener('click', logout);

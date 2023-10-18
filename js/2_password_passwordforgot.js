@@ -6,13 +6,20 @@ async function resetPassword(email) {
         const { error } = await supa.auth.api.resetPasswordForEmail(email);
 
         if (error) {
-            alert("Fehler beim Zurücksetzen des Passworts.");
+            ausgabefeld.innerHTML = "Fehler beim Zurücksetzen des Passworts.";
         } else {
-            alert("Eine E-Mail zum Zurücksetzen des Passworts wurde an Ihre E-Mail-Adresse gesendet.");
+            ausgabefeld.innerHTML = "Eine E-Mail zum Zurücksetzen des Passworts wurde an Ihre E-Mail-Adresse gesendet.";
         }
+
+        setTimeout(() => {
+            ausgabefeld.textContent = '';
+        }, 3000);
     } catch (error) {
-        console.error(error);
-        alert("Fehler beim Zurücksetzen des Passworts: " + error.message);
+        console.error(error)
+        ausgabefeld.innerHTML = "Fehler beim Zurücksetzen des Passworts: " + error.message;
+        setTimeout(() => {
+            ausgabefeld.textContent = '';
+        }, 3000);
     }
 }
 
