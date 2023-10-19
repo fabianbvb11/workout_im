@@ -141,3 +141,30 @@ ausgabefeld.appendChild(workoutItem);
 }
 }
 selectWorkout();
+
+// Funktion zum Speichern der Historie
+
+async function saveHistory() {
+    const user = supa.auth.user();
+    if (!user) {
+        console.error('Benutzer ist nicht eingeloggt.');
+        return;
+    }
+
+    const { data, error } = await supa
+        .from('historydata')
+        .insert(
+            { 
+                user_id: user.id,
+                workout_id: workoutID
+            }
+        );
+
+    if (error) {
+        console.log('Fehler beim Speichern der Historie:', error.message);
+        return;
+    }
+
+    console.log('Historie gespeichert:', data);
+}
+saveHistory();
