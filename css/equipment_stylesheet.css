@@ -77,6 +77,20 @@ h2 {
     background-color: var(--Green, #00FFC2);
     border-radius: 10px;
   }
+
+  #nichtsfinal {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 129px;
+    height: 121px;
+    background-color: var(--White, #ffffff);
+    border-color: var(--Black);
+    border: 3px solid var(--Black);
+    border-radius: 10px;
+  }
   
   /* On mouse-over, add a grey background color */
   
@@ -87,19 +101,35 @@ h2 {
     background-color: var(--Black, #000);
   }
 
+
   .container input:checked ~ .checkmark p {
     color: var(--Green);
   }
 
+  #hauptnichts input:checked ~ .checkmark p {
+    color: var(--White);
+  }
 
+  #hauptnichts input:checked ~ .checkmark {
+    background-color: var(--Black, #000);
+  }
 
-   .container input:checked ~ .checkmark .normal #Vector {
+  #hauptnichts input:checked ~ #nichtsfinal .nichtskreuz #Vectornichts {
+    fill: var(--White);   
+}
+
+.container input:checked ~ .checkmark .normal #Vector {
     fill: var(--Green, #00FFC2);   
 }
 
 .container input:checked ~ .checkmark .spezial #Vector {
     stroke: var(--Green, #00FFC2);
 }
+
+.container #nichtsbutton input:checked ~ .checkmark .normal #Vector {
+  fill: var(--Black);   
+}
+
 
   
   /* Create the checkmark/indicator (hidden when not checked) */
