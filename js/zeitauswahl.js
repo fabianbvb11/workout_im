@@ -3,7 +3,9 @@ const selectedTimeElement = document.getElementById("selectedTime");
 const buttons = document.querySelectorAll('.button-list button');
 const values = document.querySelectorAll('button.value');
 
-let selectedTime = 5; // Initial selected time in minutes
+// let selectedTime = 5; // Initial selected time in minutes
+
+localStorage.removeItem("selectedTime");
 
 // Function to update the selected time
 function updateSelectedTime() {
