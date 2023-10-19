@@ -52,7 +52,7 @@ weiterButton.addEventListener("click", () => {
     } else {
         // No time selected, display an error message in "ausgabefeld"
         const ausgabefeld = document.getElementById("ausgabefeld");
-        ausgabefeld.innerHTML = "Please select a time before proceeding.";
+        ausgabefeld.innerHTML = "Bitte eine Zeit auswählen!";
     }
 });
 
