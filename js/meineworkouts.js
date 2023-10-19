@@ -49,10 +49,13 @@ async function getMyWorkouts() {
 
                 equipmentText = equipmentText.slice(0, -2);
 
-                const embedLink = `https://www.youtube.com/watch?v=${getVideoIDFromURL(workout.video)}`;
+                const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.video)}`;
+                const embedLinkdelete = `https://www.youtube.com/watch?v=${getVideoIDFromURL(workout.video)}`;
+
+                console.log(embedLink);
 
                 workoutItem.innerHTML = `
-                <a href="workoutlöschen.html?embedLink=${embedLink}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}">
+                <a href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}">
                 <img src="../img/Cross.svg" alt="Back">
             </a>
             
