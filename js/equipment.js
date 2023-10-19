@@ -44,12 +44,6 @@ otherButtons.forEach((button) => {
 });
 
 // Event Listener für den "Nichtsbutton"
-const nichtsButtonUnchecked = document.getElementById("nichtsbutton");
-nichtsButton.addEventListener('change', function () {
-    if (nichtsButton.checked) {
-        resetNichtsButton();
-    }
-});
 
 
 async function abfrageEquipment() {

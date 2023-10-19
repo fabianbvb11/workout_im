@@ -74,7 +74,7 @@ h2 {
     align-items: center;
     width: 129px;
     height: 121px;
-    background-color: var(--Green, #00FFC2);
+   background-color: var(--Green, #00FFC2);
     border-radius: 10px;
   }
 
