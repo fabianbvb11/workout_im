@@ -75,6 +75,7 @@ for (const photo of data) {
         const captionElement = document.createElement('p');
         captionElement.textContent = photo.caption;
         photosContainer.appendChild(captionElement);
+        
     }
 }
 

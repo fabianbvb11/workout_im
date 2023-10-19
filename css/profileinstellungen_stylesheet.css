@@ -143,7 +143,13 @@ div.ansicht_workout {
     background-color: var(--Green);
     padding: 10px;
     border-radius: 10px;
+<<<<<<< Updated upstream
     margin: 10px;
+    display: grid;
+=======
+    margin: 20px;
+    width: 80vw;
+>>>>>>> Stashed changes
 }
 
 #profilbild_anzeige {

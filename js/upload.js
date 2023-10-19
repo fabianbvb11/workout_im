@@ -67,6 +67,7 @@ async function uploadPhoto() {
         }
         setTimeout(function() {
             ausgabefeld2.innerHTML = "";
+            location.href = 'profileinstellungen.html';
         }, 3000);
     } else {
         ausgabefeld2.innerHTML = 'Fehler: Keine Datei ausgewählt!';
