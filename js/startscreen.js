@@ -5,6 +5,11 @@ import { supa } from "../js/supabase_config.js";
 async function displayUserDisplayName() {
     const user = supa.auth.user();
 
+    
+// if (!user) {
+//     window.location.href = 'login.html';
+//   }
+
     if (user) {
 
         const { id } = user;
