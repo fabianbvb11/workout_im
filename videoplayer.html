@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Meine Workouts - Hustle at Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/global_stylesheet.css">
+    <link rel="stylesheet" href="../css/videoplayer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@500&display=swap"
+        rel="global_stylesheet">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
 </head>
+
 <body>
+    <header>
+        <a href="startscreen.html">
+            <img src="../img/Hustleathome.svg" alt="HustleLogo">
+        </a>
 
-    <h1 id="resultat"></h1>
 
-    <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const workoutID = urlParams.get('id');
+        <div class="userProfile">
+            <div class="buttonText displayname abstand_name" id="userDisplayName"></div>
+            <a href="profileinstellungen.html">
+                <div class="profilbild_anzeige" alt="Profilbild" id="photosContainer"></div>
+            </a>
+        </div>
 
-        const result = document.getElementById("resultat");
+    </header>
 
-        result.innerHTML = workoutID;
 
-    </script>
+    
+        <a class="backarrow" href="vorgeschlageneworkouts.html">
+            <img src="../img/Back icon.svg" alt="Backarrow">
+            <h4>Zurück</h4>
+        </a>
+    
+    <div class="wrapper">
+        <div class="videocontainer" id="ausgabefeld">
+            <h3 id="resultat"></h3>
+        </div>
+    </div>
+
+
+    <script type="module" src="../js/supabase_config.js"></script>
+    <script type="module" src="../js/videoplayer.js"></script>
 </body>
+
 </html>
