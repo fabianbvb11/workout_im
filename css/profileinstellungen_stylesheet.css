@@ -144,6 +144,7 @@ div.ansicht_workout {
     padding: 10px;
     border-radius: 10px;
     margin: 10px;
+    display: grid;
 }
 
 #profilbild_anzeige {

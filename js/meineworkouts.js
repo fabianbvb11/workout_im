@@ -49,15 +49,19 @@ async function getMyWorkouts() {
 
                 equipmentText = equipmentText.slice(0, -2);
 
-                const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.video)}`;
+                const embedLink = `https://www.youtube.com/watch?v=${getVideoIDFromURL(workout.video)}`;
 
                 workoutItem.innerHTML = `
-        <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
-        <h2>${workout.titel}</h2>
-        <h5>Beschreibung: ${workout.beschreibung}</h5>
-        <h5>Muskelgruppe: ${workout.muskelgruppe}</h5>
-        <h5>Dauer: ${workout.zeit} Min</h5>
-        <h5>${equipmentText}</h5>
+                <a href="workoutlöschen.html?embedLink=${embedLink}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}">
+                <img src="../img/Cross.svg" alt="Back">
+            </a>
+            
+            <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
+            <h2>${workout.titel}</h2>
+            <h5>Beschreibung: ${workout.beschreibung}</h5>
+            <h5>Muskelgruppe: ${workout.muskelgruppe}</h5>
+            <h5>Dauer: ${workout.zeit} Min</h5>
+            <h5>${equipmentText}</h5>
         
     `;
     ausgabefeld.appendChild(workoutItem);
