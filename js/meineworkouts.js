@@ -19,6 +19,7 @@ async function getMyWorkouts() {
         ausgabefeld.textContent = 'Fehler beim Abrufen der Workouts:' + error.message;
     } else {
         if (data.length > 0) {
+            console.log(data)
             const ausgabefeld = document.getElementById('ausgabefeld');
 
             ausgabefeld.innerHTML = '';
