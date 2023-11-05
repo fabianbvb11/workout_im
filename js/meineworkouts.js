@@ -5,9 +5,10 @@ async function getMyWorkouts() {
     const user = supa.auth.user();
 
     if (!user) {
-        ausgabefeld.textContent = 'Benutzer ist nicht eingeloggt:' + error.message;
+        window.location.href = 'login.html';
         return;
     }
+
 
     const { data, error } = await supa
         .from('workoutdata')

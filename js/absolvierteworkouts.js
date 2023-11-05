@@ -7,6 +7,12 @@ const ausgabefeld = document.getElementById('ausgabefeld');
 async function displayUserDisplayName() {
     const user = supa.auth.user();
 
+    if (!user) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+
     if (user) {
 
         const { id } = user;

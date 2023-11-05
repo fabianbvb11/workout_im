@@ -10,11 +10,11 @@ hochladen.addEventListener('click', insertWorkout);
 async function insertWorkout() {
   const user = supa.auth.user();
 
-  // Check if the user is authenticated
   if (!user) {
-      console.log('User is not authenticated.');
-      return;
-  }
+    window.location.href = 'login.html';
+    return;
+}
+
 
 
     console.log("insertWorkout() ausgeführt")

@@ -3,6 +3,12 @@ import { supa } from "../js/supabase_config.js";
 async function deleteUserData() {
   const user = supa.auth.user();
 
+  if (!user) {
+    window.location.href = 'login.html';
+    return;
+}
+
+
   if (user) {
     const { id } = user;
 

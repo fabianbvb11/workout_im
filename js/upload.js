@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 async function uploadPhoto() {
     const user = supa.auth.user();
     if (!user) {
-        console.error('Benutzer ist nicht eingeloggt.');
+        window.location.href = 'login.html';
         return;
     }
+
 
     const fileInput = document.getElementById('photoInput');
 

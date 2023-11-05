@@ -9,6 +9,12 @@ const API_KEY = 'AIzaSyD62p9odxLl0hhLyUbCV76TVnndslpe_x8';
 async function displayUserDisplayName() {
     const user = supa.auth.user();
 
+    if (!user) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+
     if (user) {
 
         const { id } = user;
@@ -41,9 +47,10 @@ displayUserDisplayName();
 async function getSignedUrl(filePath) {
     const user = supa.auth.user();
     if (!user) {
-        console.error('Benutzer ist nicht eingeloggt.');
+        window.location.href = 'login.html';
         return;
     }
+
 
 
     const { data, error } = await supa.storage.from('profilbilder').createSignedUrl(filePath, 300);
