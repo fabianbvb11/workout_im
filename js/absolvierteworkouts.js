@@ -88,71 +88,69 @@ async function getMyVisitedWorkouts() {
 
     const { data, error } = await supa
         .from('historydata')
-        .select('workoutdata!inner(titel, beschreibung, muskelgruppe, zeit, bett, stuhl, hantel, tisch, video)')
+        .select(`
+        workout_id,
+        workoutdata(id, titel, beschreibung, muskelgruppe, zeit, bett, stuhl, hantel, tisch, video)
+        `)
         .eq('user_id', user.id);
-
-
 
     if (error) {
         ausgabefeld.textContent = 'Fehler beim Abrufen der Workouts:' + error.message;
     } else {
-    if (data.length > 0) {
-        console.log(data);
-        const ausgabefeld = document.getElementById('ausgabefeld');
-        ausgabefeld.innerHTML = '';
+        if (data.length > 0) {
+            console.log(data);
+            const ausgabefeld = document.getElementById('ausgabefeld');
+            ausgabefeld.innerHTML = 'Workouts:';
 
-            // ...
+            for (const index in data) {
+                const workout = data[index];
 
-            data.forEach(workout => {
                 const workoutItem = document.createElement('div');
                 workoutItem.classList.add('ansicht_workout');
-
                 let equipmentText = 'Ausstattung: ';
-
                 if (workout.bett === true) {
                     equipmentText += 'Bett, ';
                 }
-
                 if (workout.stuhl === true) {
                     equipmentText += 'Stuhl, ';
                 }
-
                 if (workout.hantel === true) {
                     equipmentText += 'Hantel, ';
                 }
-
                 if (workout.tisch === true) {
                     equipmentText += 'Tisch, ';
                 }
-
                 equipmentText = equipmentText.slice(0, -2);
-
-             
-
+                const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.video)}`;
+                const embedLinkdelete = `https://www.youtube.com/watch?v=${getVideoIDFromURL(workout.video)}`;
+                console.log(embedLink);
+                console.log(workout.beschreibung);
+    
                 workoutItem.innerHTML = `
-                
-            
-            
-            <h2>${workout.titel}</h2>
-            <h5>Beschreibung: ${workout.beschreibung}</h5>
-            <h5>Muskelgruppe: ${workout.muskelgruppe}</h5>
-            <h5>Dauer: ${workout.zeit} Min</h5>
-            <h5>${equipmentText}</h5>
-        
-    `;
-    ausgabefeld.appendChild(workoutItem);
-            });
+                <a href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}">
+                <img src="../img/Cross.svg" alt="Back">
+                </a>
+                <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
+                <h2>${workout.titel}</h2>
+                <h5>Beschreibung: ${workout.beschreibung}</h5>
+                <h5>Muskelgruppe: ${workout.muskelgruppe}</h5>
+                <h5>Dauer: ${workout.zeit} Min</h5>
+                <h5>${equipmentText}</h5>
+            `;
+            ausgabefeld.appendChild(workoutItem);
+            }
 
-           
-
+            function getVideoIDFromURL(url) {
+                const videoIDMatch = /(?:[?&]v=|\/embed\/|\/videos\/|youtu\.be\/|\/embed\?video_id=)([a-zA-Z0-9_-]+)/.exec(url);
+                if (videoIDMatch) {
+                    return videoIDMatch[1];
+                }
+                return null; // Oder einen Standardwert, wenn keine passende Video-ID gefunden wurde
+            }
         } else {
             ausgabefeld.textContent = 'Keine Workouts gefunden.';
         }
     }
 }
 
-// Rufe die Funktion zum Abrufen der Workouts des Benutzers auf
 getMyVisitedWorkouts();
-
-
-
