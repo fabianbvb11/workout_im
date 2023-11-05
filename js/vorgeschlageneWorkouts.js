@@ -114,8 +114,6 @@ let workoutMuskelgruppe = localStorage.getItem('activeDotID');
 let workoutDauer = localStorage.getItem('selectedTime');
 
 
-//abfrage von Supabase
-// ...
 
 async function selectAllWorkouts() {
     const { data, error } = await supa

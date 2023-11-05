@@ -12,7 +12,7 @@ async function getMyWorkouts() {
 
     const { data, error } = await supa
         .from('workoutdata')
-        .select('titel, beschreibung, muskelgruppe, zeit, bett, stuhl, hantel, tisch, video')
+        .select('id, titel, beschreibung, muskelgruppe, zeit, bett, stuhl, hantel, tisch, video')
         .eq('user_id', user.id);
 
 
@@ -25,7 +25,6 @@ async function getMyWorkouts() {
 
             ausgabefeld.innerHTML = '';
 
-            // ...
 
             data.forEach(workout => {
                 const workoutItem = document.createElement('div');
@@ -57,16 +56,16 @@ async function getMyWorkouts() {
                 console.log(embedLink);
 
                 workoutItem.innerHTML = `
-                <a href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}">
-                <img src="../img/Cross.svg" alt="Back">
-            </a>
+                <a style="display: flex" href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}&workoutId=${workout.id}">
+                    <img src="../img/Cross.svg" alt="Back">
+                </a>
             
-            <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
-            <h2>${workout.titel}</h2>
-            <h5>Beschreibung: ${workout.beschreibung}</h5>
-            <h5>Muskelgruppe: ${workout.muskelgruppe}</h5>
-            <h5>Dauer: ${workout.zeit} Min</h5>
-            <h5>${equipmentText}</h5>
+                <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
+                <h2>${workout.titel}</h2>
+                <h5>Beschreibung: ${workout.beschreibung}</h5>
+                <h5>Muskelgruppe: ${workout.muskelgruppe}</h5>
+                <h5>Dauer: ${workout.zeit} Min</h5>
+                <h5>${equipmentText}</h5>
         
     `;
     ausgabefeld.appendChild(workoutItem);
