@@ -107,37 +107,49 @@ async function getMyVisitedWorkouts() {
         if (data.length > 0) {
             console.log(data);
             const ausgabefeld = document.getElementById('ausgabefeld');
-            
-            for (const workout of data) {
+            ausgabefeld.innerHTML = '';
+
+            // ...
+
+            for (const index in data) {
+                const workout = data[index];
+
                 const workoutItem = document.createElement('div');
                 workoutItem.classList.add('ansicht_workout');
                 let equipmentText = 'Ausstattung: ';
-                if (workout.bett === true) {
+                if (workout.workoutdata.bett === true) {
                     equipmentText += 'Bett, ';
                 }
-                if (workout.stuhl === true) {
+                if (workout.workoutdata.stuhl === true) {
                     equipmentText += 'Stuhl, ';
                 }
-                if (workout.hantel === true) {
+                if (workout.workoutdata.hantel === true) {
                     equipmentText += 'Hantel, ';
                 }
-                if (workout.tisch === true) {
+                if (workout.workoutdata.tisch === true) {
                     equipmentText += 'Tisch, ';
                 }
                 equipmentText = equipmentText.slice(0, -2);
-                const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.video)}`;
+
+                const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.workoutdata.video)}`;
+                const embedLinkdelete = `https://www.youtube.com/watch?v=${getVideoIDFromURL(workout.workoutdata.video)}`;
+
+                console.log(workout.workoutdata.titel);
                 console.log(embedLink);
                 console.log(workout.beschreibung);
 
                 workoutItem.innerHTML = `
-                    <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
-                    <h2>${workout.titel}</h2>
-                    <h5>Beschreibung: ${workout.beschreibung}</h5>
-                    <h5>Muskelgruppe: ${workout.muskelgruppe}</h5>
-                    <h5>Dauer: ${workout.zeit} Min</h5>
-                    <h5>${equipmentText}</h5>
-                `;
-                ausgabefeld.appendChild(workoutItem);
+                <a href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}">
+                <img src="../img/Cross.svg" alt="Back">
+                </a>
+                <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
+                <h2>${workout.workoutdata.titel}</h2>
+                <h5>Beschreibung: ${workout.workoutdata.beschreibung}</h5>
+                <h5>Muskelgruppe: ${workout.workoutdata.muskelgruppe}</h5>
+                <h5>Dauer: ${workout.workoutdata.zeit} Min</h5>
+                <h5>${equipmentText}</h5>
+            `;
+            ausgabefeld.appendChild(workoutItem);
             }
 
             function getVideoIDFromURL(url) {
