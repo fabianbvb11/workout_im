@@ -134,9 +134,7 @@ async function getMyVisitedWorkouts() {
                 const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.workoutdata.video)}`;
                 const embedLinkdelete = `https://www.youtube.com/watch?v=${getVideoIDFromURL(workout.workoutdata.video)}`;
 
-                console.log(workout.workoutdata.titel);
-                console.log(embedLink);
-                console.log(workout.beschreibung);
+                
 
                 workoutItem.innerHTML = `
                 <a href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}">
