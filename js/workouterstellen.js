@@ -85,7 +85,17 @@ async function insertWorkout() {
     if (error) {
       ausgabefeld.textContent = 'Fehler beim Speichern der Änderungen: ' + error.message;
   } else {
-    ausgabefeld.textContent = 'Änderungen erfolgreich gespeichert!';
+    ausgabefeld.textContent = 'Workout erfolgreich hochgeladen!';
+
+    url.value = '';
+  workoutTitel.value = '';
+  workoutBeschreibung.value = '';
+  workoutMuskelgruppe.value = '';
+  workoutDauer.value = '';
+  document.getElementById("bettbutton").checked = false;
+  document.getElementById("stuhlbutton").checked = false;
+  document.getElementById("hantelbutton").checked = false;
+  document.getElementById("tischbutton").checked = false;
   }
 
   setTimeout(() => {
