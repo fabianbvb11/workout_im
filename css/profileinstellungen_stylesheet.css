@@ -152,6 +152,7 @@ div.ansicht_workout {
     height: 300px;
     border: 1px solid var(--Black); 
     overflow: hidden;
+    margin-bottom: 2%;
 }
 
 #profilbild_anzeige img {
