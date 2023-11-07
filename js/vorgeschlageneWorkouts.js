@@ -133,6 +133,12 @@ async function selectAllWorkouts() {
     console.log("data", data);
 
     const resultContainer = document.querySelector("#result-container");
+    const ausgabefeld = document.getElementById("ausgabefeld");
+
+    if (data.length === 0) {
+        ausgabefeld.textContent = "Kein Workout gefunden. Bitte passe die Suchkriterien an, um ein Workout zu starten.";
+
+    }
 
     for (const workout of data) {
         console.log(workout.titel);
