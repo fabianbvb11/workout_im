@@ -35,6 +35,9 @@ h4 {
     height: 75vh;
 }
 
+.löschen {
+    align-self: flex-end;
+}
 
 
 .untertitel {
