@@ -11,6 +11,9 @@
         <link rel="global_stylesheet" href="https://fonts.googleapis.com">
         <link rel="global_stylesheet" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@500&display=swap" rel="global_stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        
         <script src="https://unpkg.com/@supabase/supabase-js@2"> </script>
         <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.0/dist/umd/supabase.min.js"></script>
     </head>
@@ -27,7 +30,11 @@
                 <label for="email"><h4>E-Mail</h4></label>
                 <input type="text" name="email" id="emailInput" required>
                 <label for="passwort"><h4>Passwort</h4></label>
-                <input type="password" name="password" id="passwordInput" required>
+                <!-- <input type="password" name="password" id="passwordInput" required> -->
+                <div class="password-container">
+                    <input type="password" name="password" id="passwordInput" required>
+                    <i id="togglePassword" class="fas fa-eye-slash"></i>
+                </div>
                 <div class="agb">   
                     <input type="checkbox" name="agb" id="agree" required>
                     <label for="agree"><p>ich akzeptiere die AGB.</p></label>

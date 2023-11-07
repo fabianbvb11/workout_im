@@ -6,12 +6,21 @@ async function signUp() {
     const password = document.getElementById('passwordInput').value;
     const firstname = document.getElementById('firstname').value;
     const lastname = document.getElementById('name').value;
+    const agreeCheckbox = document.getElementById('agree');
 
      if (!email || !password || !firstname || !lastname) {
         ausgabefeld.textContent = 'Bitte fülle alle Felder aus!';
         setTimeout(function() {
         ausgabefeld.textContent = '';
     }, 3000);
+        return;
+    }
+
+    if (!agreeCheckbox.checked) {
+        ausgabefeld.textContent = 'Bitte akzeptiere die AGB!';
+        setTimeout(function() {
+            ausgabefeld.textContent = '';
+        }, 3000);
         return;
     }
 
@@ -57,5 +66,21 @@ supa.auth.onAuthStateChange((event, session) => {
     } else if (event === "SIGNED_OUT") {
         console.log("User signed out");
         updateUserStatus(null);
+    }
+});
+
+
+const passwordInput = document.getElementById('passwordInput');
+const togglePassword = document.getElementById('togglePassword');
+
+togglePassword.addEventListener('click', () => {
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePassword.classList.remove('fa-eye-slash');
+        togglePassword.classList.add('fa-eye');
+    } else {
+        passwordInput.type = 'password';
+        togglePassword.classList.remove('fa-eye');
+        togglePassword.classList.add('fa-eye-slash');
     }
 });
