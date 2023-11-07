@@ -165,13 +165,14 @@ async function selectAllWorkouts() {
                     `;
                 } else {
                     console.error('Unable to fetch thumbnail.');
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    }
-}
+                  }
+                })
+                .catch((error) => {
+                  console.error('Error:', error);
+                });
+            }
+          }
+
 
 selectAllWorkouts();
 
