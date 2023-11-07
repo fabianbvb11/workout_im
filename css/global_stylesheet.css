@@ -245,6 +245,11 @@ a {
     background-color: var(--Red);
 }
 
+.grünweiss {
+    background-color: var(--White);
+    border: 2px solid var(--green);
+}
+
 h6.rot {
     color: var(--White);
 }
