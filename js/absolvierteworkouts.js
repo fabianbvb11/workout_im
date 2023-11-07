@@ -95,12 +95,38 @@ async function getMyVisitedWorkouts() {
     const { data, error } = await supa
         .from('historydata')
         .select(`
-            workout_id,
+            workout_id, timestamp,
             workoutdata(id, titel, beschreibung, muskelgruppe, zeit, bett, stuhl, hantel, tisch, video)
         `)
-        .eq('user_id', user.id);
+        .eq('user_id', user.id)
+        .order('timestamp', { ascending: false });
 
 
+
+// const originalDate = "2023-11-05 16:57:00.841242";
+
+// const dateObj = new Date(originalDate);
+
+// function addLeadingZero(number) {
+//     return number < 10 ? `0${number}` : number;
+// }
+
+// const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}, ${addLeadingZero(dateObj.getHours())}:${addLeadingZero(dateObj.getMinutes())}`;
+
+
+
+    const originalDate = data[0].timestamp; // Assuming timestamp is in a suitable format, adjust if necessary
+
+    const dateObj = new Date(originalDate);
+
+    function addLeadingZero(number) {
+        return number < 10 ? `0${number}` : number;
+    }
+
+    const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}, ${addLeadingZero(dateObj.getHours())}:${addLeadingZero(dateObj.getMinutes())}`;
+    
+
+    
     if (error) {
         ausgabefeld.textContent = 'Fehler beim Abrufen der Workouts:' + error.message;
     } else {
@@ -144,6 +170,7 @@ async function getMyVisitedWorkouts() {
                 <h4>Muskelgruppe: ${workout.workoutdata.muskelgruppe}</h4>
                 <h4>Dauer: ${workout.workoutdata.zeit} Min</h4>
                 <h4>${equipmentText}</h4>
+                <h4>Ausgeführt am: ${formattedDate}</h4>
             `;
             ausgabefeld.appendChild(workoutItem);
             }
