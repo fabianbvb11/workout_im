@@ -9,6 +9,8 @@ async function resetPassword(email) {
             ausgabefeld.innerHTML = "Fehler beim Zurücksetzen des Passworts.";
         } else {
             ausgabefeld.innerHTML = "Eine E-Mail zum Zurücksetzen des Passworts wurde an Ihre E-Mail-Adresse gesendet.";
+
+            document.getElementById("emailpasswordreset").value = '';
         }
 
         setTimeout(() => {
