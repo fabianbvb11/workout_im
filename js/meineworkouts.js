@@ -56,16 +56,16 @@ async function getMyWorkouts() {
                 console.log(embedLink);
 
                 workoutItem.innerHTML = `
-                <a style="display: flex" href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}&workoutId=${workout.id}">
+                <a class='löschen' style="display: flex" href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}&workoutId=${workout.id}">
                     <img src="../img/Cross.svg" alt="Back">
                 </a>
             
                 <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
                 <h2>${workout.titel}</h2>
-                <h5>Beschreibung: ${workout.beschreibung}</h5>
-                <h5>Muskelgruppe: ${workout.muskelgruppe}</h5>
-                <h5>Dauer: ${workout.zeit} Min</h5>
-                <h5>${equipmentText}</h5>
+                <h4>Beschreibung: ${workout.beschreibung}</h4>
+                <h4>Muskelgruppe: ${workout.muskelgruppe}</h4>
+                <h4>Dauer: ${workout.zeit} Min</h4>
+                <h4>${equipmentText}</h4>
         
     `;
     ausgabefeld.appendChild(workoutItem);
