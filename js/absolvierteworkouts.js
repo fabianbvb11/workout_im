@@ -137,15 +137,13 @@ async function getMyVisitedWorkouts() {
                 
 
                 workoutItem.innerHTML = `
-                <a href="workoutlöschen.html?embedLink=${embedLinkdelete}&beschreibung=${workout.beschreibung}&dauer=${workout.zeit}&muskelgruppe=${workout.muskelgruppe}">
-                <img src="../img/Cross.svg" alt="Back">
-                </a>
+                
                 <iframe width="560" height="315" src="${embedLink}" frameborder="0" allowfullscreen></iframe>
                 <h2>${workout.workoutdata.titel}</h2>
-                <h5>Beschreibung: ${workout.workoutdata.beschreibung}</h5>
-                <h5>Muskelgruppe: ${workout.workoutdata.muskelgruppe}</h5>
-                <h5>Dauer: ${workout.workoutdata.zeit} Min</h5>
-                <h5>${equipmentText}</h5>
+                <h4>${workout.workoutdata.beschreibung}</h4>
+                <h4>Muskelgruppe: ${workout.workoutdata.muskelgruppe}</h4>
+                <h4>Dauer: ${workout.workoutdata.zeit} Min</h4>
+                <h4>${equipmentText}</h4>
             `;
             ausgabefeld.appendChild(workoutItem);
             }
