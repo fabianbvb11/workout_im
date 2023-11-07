@@ -73,5 +73,7 @@ if (activeDotID) {
     }
 }
 
+// Save the ID of the active "dot" to local storage
+localStorage.setItem('activeDotID', dots[currentIndex].id);
 console.log(localStorage.getItem('activeDotID'));
 console.log(localStorage.getItem('selectedTime'));
