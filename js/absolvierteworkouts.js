@@ -101,7 +101,7 @@ async function getMyVisitedWorkouts() {
         .select(`
             workout_id, timestamp,
             workoutdata(id, titel, beschreibung, muskelgruppe, zeit, bett, stuhl, hantel, tisch, video)
-        `)
+        `) // Workoutdata war beim Aufrufen aus der Datenbank ein Pain -> Abfrage war zu unspezifisch (siehe for - in schleife unten)
         .eq('user_id', user.id)
         .order('timestamp', { ascending: false });
    
