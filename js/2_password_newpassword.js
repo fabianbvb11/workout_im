@@ -38,7 +38,6 @@ async function changePassword() {
     }
 }
 
-// Event listener für das Formular
 
 const changePasswordForm = document.querySelector('form');
 changePasswordForm.addEventListener('submit', function (e) {
