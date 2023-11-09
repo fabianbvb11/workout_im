@@ -2,7 +2,7 @@ import { supa } from "../js/supabase_config.js";
 
 const ausgabefeld = document.getElementById('ausgabefeld');
 
-// Funktion zum Abrufen und Anzeigen des Benutzernamens
+// Funktion zum Abrufen und Anzeigen des Benutzernamens und Kontrolle des Logins
 
 async function displayUserDisplayName() {
     const user = supa.auth.user();
@@ -36,9 +36,10 @@ async function displayUserDisplayName() {
 
 }
 
+
 displayUserDisplayName();
 
-// Profilbild anzeigen
+//  signierte URLs für Profilbilder abzurufen 
 async function getSignedUrl(filePath) {
     const user = supa.auth.user();
     if (!user) {
@@ -54,6 +55,7 @@ async function getSignedUrl(filePath) {
     return data.signedURL;
 }
 
+// Funktion zum Abrufen und Anzeigen der Profilbilder des Benutzers
 async function fetchAndDisplayPhotos() {
     const user = supa.auth.user();
     if (!user) {
@@ -84,6 +86,8 @@ async function fetchAndDisplayPhotos() {
 
 fetchAndDisplayPhotos();
 
+//ruft die Workout-Daten des angemeldeten Benutzers aus der Datenbank ab und zeigt sie auf der Webseite an
+
 async function getMyVisitedWorkouts() {
     const user = supa.auth.user();
 
@@ -100,20 +104,6 @@ async function getMyVisitedWorkouts() {
         `)
         .eq('user_id', user.id)
         .order('timestamp', { ascending: false });
-
-
-
-// const originalDate = "2023-11-05 16:57:00.841242";
-
-// const dateObj = new Date(originalDate);
-
-// function addLeadingZero(number) {
-//     return number < 10 ? `0${number}` : number;
-// }
-
-// const formattedDate = `${addLeadingZero(dateObj.getDate())}.${addLeadingZero(dateObj.getMonth() + 1)}.${dateObj.getFullYear()}, ${addLeadingZero(dateObj.getHours())}:${addLeadingZero(dateObj.getMinutes())}`;
-
-
    
     if (error) {
         ausgabefeld.textContent = 'Fehler beim Abrufen der Workouts:' + error.message;
@@ -123,7 +113,8 @@ async function getMyVisitedWorkouts() {
             const ausgabefeld = document.getElementById('ausgabefeld');
             ausgabefeld.innerHTML = '';
 
-            // ...
+
+            // Für jedes Workout wird ein HTML-Element erstellt und mit den Daten aus der Datenbank befüllt
 
             for (const index in data) {
                 const workout = data[index];
@@ -177,6 +168,7 @@ async function getMyVisitedWorkouts() {
             ausgabefeld.appendChild(workoutItem);
             }
 
+            // Funktion zum Extrahieren der Video-ID aus der URL
             function getVideoIDFromURL(url) {
                 const videoIDMatch = /(?:[?&]v=|\/embed\/|\/videos\/|youtu\.be\/|\/embed\?video_id=)([a-zA-Z0-9_-]+)/.exec(url);
                 if (videoIDMatch) {
