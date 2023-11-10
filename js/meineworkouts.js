@@ -134,7 +134,10 @@ async function getMyWorkouts() {
                     equipmentText += 'Tisch, ';
                 }
 
+
                 equipmentText = equipmentText.slice(0, -2);
+
+                
 
                 const embedLink = `https://www.youtube.com/embed/${getVideoIDFromURL(workout.video)}`;
                 const embedLinkdelete = `https://www.youtube.com/watch?v=${getVideoIDFromURL(workout.video)}`;
