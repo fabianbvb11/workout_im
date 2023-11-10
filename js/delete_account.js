@@ -80,9 +80,11 @@ if (errorUser) {
 } else {
   if (dataUser) {
       console.log(`Daten aus "userdata" erfolgreich gelöscht.`);
+      window.location.href = "login.html";
   } else {
       console.log('Keine Daten aus "userdata" gelöscht. Benutzer mit der angegebenen ID nicht gefunden.');
-  }
+      window.location.href = "login.html";
+  } 
 }
 
     // Delete user from authentication
